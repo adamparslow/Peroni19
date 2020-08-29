@@ -25,6 +25,8 @@ class PaperData:
         self.title = "".join(charList)
 
 
+    def setCitations(citations):
+        self.citations = citations
 
 
 
