@@ -6,9 +6,11 @@ import os.path
 import sys
 import pdfreader
 from pdfreader import PDFDocument, SimplePDFViewer
+#from PaperData import *
 
 from PyPDF2 import PdfFileReader
 
+papers = []
 
 report_names = []
 '''
@@ -16,40 +18,32 @@ enter everything into the report names`
 '''
 outgoing_links = {}
 
+currId = 0
 
-
-def pdfReader(file_names):
+def findCitations(file_names):
 
     global report_names
     global outgoing_links
 
 
     for file_name in file_names:
-	    pdf = PdfFileReader(file_name)
-	    pdf_length = pdf.getNumPages()
-	    #print(pdf.documentInfo)
+        pdf = PdfFileReader(file_name)
+        pdf_length = pdf.getNumPages()
 
-	    for page_number in range(pdf_length):
-		    page = pdf.getPage(page_number)
-		    raw = page.extractText()
-		    raw = raw.replace('\n', '')
-		    #print(bytes(raw, 'ASCII'))
+        #Read through each page in the file and extract the text from it
+        for page_number in range(pdf_length):
+            page = pdf.getPage(page_number)
+            raw = page.extractText()
+            raw = raw.replace('\n', '')
+        
+            #Check if the page that we are currently on contains the name of any of the other reports that we are looking for links too
+            for report in report_names:
+                if report in raw:
+                    if len(outgoing_links[report]) == 0:
+                        outgoing_links[report] = []
+                    outgoing_links[file_name].append(report)
 
-		    #with open("hole.txt", "w+") as f:
-		    #	f.write(raw)
-
-		    for report in report_names:
-			    if report in raw:
-				    if len(outgoing_links[report]) == 0:
-					    outgoing_links[report] = []
-				    info = {}
-                    
-				    pdf_info[searchable_title] = file_name
-				    pdf_info[broken_title] = pdf.documentInfo.title
-				    pdf_info[author] = pdf.documentInfo.author
-				    pdf_info[creationdate] = pdf.documentInfo.creationdate
-				    outgoing_links[report].append(pdf_info)
-
+    return outgoing_links
 
 
 
@@ -82,12 +76,12 @@ file_list_column = [
 def pdfSelectedViewer(numRows):
 
     pdfSelected = []
-    pdfSelected.append([sg.Text("choose PDF's from list on left: ")])
+    pdfSelected.append([sg.Text("choose PDFs from list on left: ")])
 
     pdfSelected.append([sg.Listbox(values=[], enable_events=True, size=(40, 20), key="selectedList")])
-    pdfSelected.append([sg.Text("Enter Desired Output FileName: ")])
+    pdfSelected.append([sg.Text("Enter Desired Output File: ")])
     pdfSelected.append([sg.InputText(do_not_clear = True, key = "output")])
-    pdfSelected.append([sg.Button('execute')])
+    pdfSelected.append([sg.Button('Generate Map')])
     return pdfSelected
 
 
@@ -116,6 +110,7 @@ selectedFileList = []
 def pdfSelectedListboxManager():
 
     global selectedFileList
+    global currId
     global window
 
 
@@ -131,19 +126,21 @@ def pdfSelectedListboxManager():
     elif(fileName not in selectedFileList):
         temp = {}
         temp["fileName"] = fileName
-        text = sg.popup_get_text('Title',"" ,'Title: Author(s)(comma seperated): ')
+        text = sg.popup_get_text('Please enter title and authors:',"" ,'Title:  Author(s)(comma seperated):')
+        text1 = sg.popup_get_text('Please enter year of publication:',"" ,'')
         title = text.split(" Author(s)(comma seperated):")[0].strip('Title: ')
         authors = text.split(" Author(s)(comma seperated):")[1]
         temp["title"] = title
         temp["authors"] = authors
-        
-
+        year = text1
+        newPaper = PaperData(authors, title, year, currId)
+        currId += 1
         selectedFileList.append(temp)
 
     tempArray = []
 
     for entry in selectedFileList:
-        tempArray.append(str(entry["fileName"]) + "\t" + str(entry["title"]))
+        tempArray.append(str(entry["fileName"]) + "\t -> \t" + str(entry["title"]))
 
 
     window["selectedList"].update(tempArray)
@@ -211,7 +208,7 @@ while True:
         tempFileName = []
         for selected in selectedFileList:
             tempFileName.append(folder+"/"+str(selected["fileName"]))
-        pdfReader(tempFileName)
+        links = findCitations(tempFileName)
 
         print('execute')
         
