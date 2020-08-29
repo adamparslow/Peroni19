@@ -1,11 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-     width="1000" height="1000" viewBox="0 -1000 1000 1000">
+     width="450" height="100" viewBox="0 -100 450 100">
 <defs>
-<linearGradient x1="0" y1="-50" x2="50" y2="-55" gradientUnits="userSpaceOnUse" id="d0">
+<linearGradient x1="70" y1="-50" x2="370" y2="-80" gradientUnits="userSpaceOnUse" id="d0">
 <stop offset="0" stop-color="#e4ff7a" stop-opacity="1" />
-<stop offset="1" stop-color="#e4ff78" stop-opacity="1" />
+<stop offset="1" stop-color="#fc7f00" stop-opacity="1" />
 </linearGradient>
 </defs>
-<rect x="0" y="-55" width="50" height="5" stroke="black" stroke-width="0.002" fill="url(#d0)" />
+<text x="0" y="-55" font-size="29">Key</text>
+<text x="50" y="-20" font-size="29">10</text>
+<text x="178" y="-20" font-size="29">Pages</text>
+<text x="350" y="-20" font-size="29">90</text>
+<rect x="70" y="-80" width="300" height="30" stroke="black" stroke-width="1" fill="url(#d0)" />
 </svg>
