@@ -3,6 +3,56 @@ import PySimpleGUI as sg
 
 import os.path
 
+import sys
+import pdfreader
+from pdfreader import PDFDocument, SimplePDFViewer
+
+from PyPDF2 import PdfFileReader
+
+
+report_names = []
+'''
+enter everything into the report names`
+'''
+outgoing_links = {}
+
+
+
+def pdfReader(file_names):
+
+    global report_names
+    global outgoing_links
+
+
+    for file_name in file_names:
+	    pdf = PdfFileReader(file_name)
+	    pdf_length = pdf.getNumPages()
+	    #print(pdf.documentInfo)
+
+	    for page_number in range(pdf_length):
+		    page = pdf.getPage(page_number)
+		    raw = page.extractText()
+		    raw = raw.replace('\n', '')
+		    #print(bytes(raw, 'ASCII'))
+
+		    #with open("hole.txt", "w+") as f:
+		    #	f.write(raw)
+
+		    for report in report_names:
+			    if report in raw:
+				    if len(outgoing_links[report]) == 0:
+					    outgoing_links[report] = []
+				    info = {}
+                    
+				    pdf_info[searchable_title] = file_name
+				    pdf_info[broken_title] = pdf.documentInfo.title
+				    pdf_info[author] = pdf.documentInfo.author
+				    pdf_info[creationdate] = pdf.documentInfo.creationdate
+				    outgoing_links[report].append(pdf_info)
+
+
+
+
 file_list_column = [
 
     [
@@ -35,8 +85,8 @@ def pdfSelectedViewer(numRows):
     pdfSelected.append([sg.Text("choose PDF's from list on left: ")])
 
     pdfSelected.append([sg.Listbox(values=[], enable_events=True, size=(40, 20), key="selectedList")])
-
-
+    pdfSelected.append([sg.Text("Enter Desired Output FileName: ")])
+    pdfSelected.append([sg.InputText(do_not_clear = True, key = "output")])
     pdfSelected.append([sg.Button('execute')])
     return pdfSelected
 
@@ -93,7 +143,7 @@ def pdfSelectedListboxManager():
     tempArray = []
 
     for entry in selectedFileList:
-        tempArray.append(entry["fileName"])
+        tempArray.append(str(entry["fileName"]) + "\t" + str(entry["title"]))
 
 
     window["selectedList"].update(tempArray)
@@ -157,8 +207,15 @@ while True:
         pdfSelectedListboxManager()
 
     elif event == 'execute':
-        print('execute')
         print(folder)
+        tempFileName = []
+        for selected in selectedFileList:
+            tempFileName.append(folder+"/"+str(selected["fileName"]))
+        pdfReader(tempFileName)
+
+        print('execute')
+        
+        print(values["output"])
 
 
 
