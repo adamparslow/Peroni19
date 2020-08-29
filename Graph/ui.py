@@ -99,6 +99,8 @@ def pdfSelectedViewer(numRows):
 
 # ----- Full layout -----
 
+selectedFileList = []
+
 newPaper24 = PaperData("M V Berry", "Transitionless quantum driving", "2009", "/home/aztar/Dropbox/SyncHacc/Peroni19/Papers/Berry2009.pdf", 24, [], "", 0)
 papers.append(newPaper24)
 selectedFileList.append({"title": "Transitionless quantum driving", "authors": "M V Berry", "fileName": "/home/aztar/Dropbox/SyncHacc/Peroni19/Papers/Berry2009.pdf"})
@@ -138,7 +140,6 @@ layout = [
 ]
 
 window = sg.Window("Select PDFs to Map", layout)
-selectedFileList = []
 
 
 
