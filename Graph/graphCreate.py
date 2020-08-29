@@ -9,7 +9,7 @@ import sys
 import os
 
 def createEdge(graph, src, dest): 
-	graph.add_edge(src, dest)
+	graph.add_edge(dest, src)
 	
 def createNode(graph, node, x, y, label, url, color, height=2, width=3):
 	graph.add_node(node, pos=str(x) + ", " + str(y) + "!", 
@@ -131,7 +131,7 @@ def makeGraph(papers, output):
 	drawTimeline(minYear, maxYear)
 	createKey(minWords, maxWords)
 
-	fig = svg.SVGFigure("3279pt", "788pt")
+	fig = svg.SVGFigure("3279pt", "850pt")
 
 	fig1 = svg.fromfile('key.svg')
 	fig2 = svg.fromfile('map.svg')
@@ -142,7 +142,7 @@ def makeGraph(papers, output):
 	plot2 = fig2.getroot()
 	plot2.moveto(0, 100)
 	plot3 = fig3.getroot()
-	plot3.moveto(0, 788)
+	plot3.moveto(0, 850)
 
 	fig.append([plot2, plot3, plot1])
 
