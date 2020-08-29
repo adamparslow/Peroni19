@@ -23,11 +23,14 @@ def findCitations(papers):
 
     global outgoing_links
 
+    bkpPapersList = []
+    for paper in papers:
+        bkpPapersList.append(paper)
+
     for paper in papers:
         pdf = PdfFileReader(paper.fileName)
         pdf_length = pdf.getNumPages()
         paper.numPages = pdf_length
-
 
         #Read through each page in the file and extract the text from it
         for page_number in range(pdf_length):
@@ -36,14 +39,20 @@ def findCitations(papers):
             raw = raw.replace('\n', '')
         
             #Check if the page that we are currently on contains the name of any of the other reports that we are looking for links too
-            for paper2 in papers:
-                if ("".join(paper2.title.split())) in raw:
-                    if len(outgoing_links[report]) == 0:
-                        outgoing_links[report] = []
-                    outgoing_links[file_name].append(report)
-                print(outgoing_links[file_name])
+            for paperToFind in bkpPapersList:
+                print("searching for", paperToFind.title, "in page", page_number, "of", paper.title)
+                authorToFind = paperToFind.author.split(',')[0]
+                authorToFind = authorToFind.split(' ')[1]
+                if ("".join(paperToFind.title.split())) in raw and authorToFind in raw and paperToFind.title != paper.title:
+                    print("found sumn")
+                    paper.addCitation(paperToFind.id)
+                #print("\n", paper.title, paper.year, "aka", paper.fileName[-20:], "has citation to: \n", paperToFind.title, paperToFind.year, "otherwise known as", paperToFind.fileName[-20:], "and id", paperToFind.id)
+                print("\n")
 
-    return outgoing_links
+    for paper in papers:
+        print(paper.title + "(" + str(paper.id) + ")" + " cites " + str(paper.citations))
+
+    return papers
 
 
 
@@ -81,7 +90,7 @@ def pdfSelectedViewer(numRows):
     pdfSelected.append([sg.Listbox(values=[], enable_events=True, size=(40, 20), key="selectedList")])
     pdfSelected.append([sg.Text("Enter Desired Output File: ")])
     pdfSelected.append([sg.InputText(do_not_clear = True, key = "output")])
-    pdfSelected.append([sg.Button('execute')])
+    pdfSelected.append([sg.Button('Generate Map')])
     return pdfSelected
 
 
@@ -135,6 +144,9 @@ def pdfSelectedListboxManager():
         temp["title"] = title
         temp["authors"] = authors
         year = text1
+
+        title = " ".join(title.split('\n'))
+        authors = " ".join(authors.split('\n'))
 
         newPaper = PaperData(authors, title, year, fileName, currId, [], "", 0)
         currId += 1
@@ -193,6 +205,22 @@ def displayPDFs():
 
 folder = 0
 
+newPaper24 = PaperData("M V Berry", "Transitionless quantum driving", "2009", "/home/olgap/Desktop/Hackathons/SYNCS_hack2020/Peroni19/Papers/Berry2009.pdf", 24, [], "", 0)
+papers.append(newPaper24)
+
+#newPaper25 = PaperData("E. Torrontegui, S. Ibanez, S. Martinez-Garaot, M. Modugno,A. del Campo, D. Gu´ery-Odelin, A. Ruschhaupt, Xi Chen, J. G. Muga", "Shortcuts to adiabaticity", "2015", "/home/olgap/Desktop/Hackathons/SYNCS_hack2020/Peroni19/Papers/muga2015.pdf", 25, [], "", 0)
+#papers.append(newPaper25)
+
+newPaper26 = PaperData("Shuo-Yen Tseng", "Counterdiabatic mode-evolution based coupled-waveguide devices", "2013", "/home/olgap/Desktop/Hackathons/SYNCS_hack2020/Peroni19/Papers/oe-21-18-21224.pdf", 26, [], "", 0)
+papers.append(newPaper26)
+
+newPaper27 = PaperData("Shuo-Yen Tseng, Rui-Dan Wen, Ying-Feng Chiu, and Xi Chen", "Short and robust directional couplers designed by shortcuts to adiabaticity", "2014", "/home/olgap/Desktop/Hackathons/SYNCS_hack2020/Peroni19/Papers/oe-22-16-18849.pdf", 27, [], "", 0)
+papers.append(newPaper27)
+
+newPaper28 = PaperData("Tzu-Hsuan Pan, Shuo-Yen Tseng", "Short and robust silicon mode (de)multiplexers using shortcuts to adiabaticity", "2015", "/home/olgap/Desktop/Hackathons/SYNCS_hack2020/Peroni19/Papers/oe-23-8-10405.pdf", 28, [], "", 0)
+papers.append(newPaper28)
+
+
 while True:
 
     event, values = window.read()
@@ -210,7 +238,7 @@ while True:
     elif event == "-FILE LIST-":  # A file was chosen from the listbox
         pdfSelectedListboxManager()
 
-    elif event == 'execute':
+    elif event == 'Generate Map':
         print(folder)
         '''tempFileName = []
         for selected in selectedFileList:
