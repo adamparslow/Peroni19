@@ -40,11 +40,11 @@ def findCitations(papers):
         
             #Check if the page that we are currently on contains the name of any of the other reports that we are looking for links too
             for paperToFind in bkpPapersList:
-                print("searching for", paperToFind.title, "in page", page_number, "of", paper.title)
+                #print("searching for", paperToFind.title, "in page", page_number, "of", paper.title)
                 authorToFind = paperToFind.author.split(',')[0]
                 authorToFind = authorToFind.split(' ')[1]
                 if ("".join(paperToFind.title.split())) in raw and authorToFind in raw and paperToFind.title != paper.title:
-                    print("found sumn")
+                    #print("found sumn")
                     paper.addCitation(paperToFind.id)
                 #print("\n", paper.title, paper.year, "aka", paper.fileName[-20:], "has citation to: \n", paperToFind.title, paperToFind.year, "otherwise known as", paperToFind.fileName[-20:], "and id", paperToFind.id)
                 print("\n")
