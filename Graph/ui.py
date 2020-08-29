@@ -119,7 +119,7 @@ papers.append(newPaper27)
 newPaper28 = PaperData("Tzu-Hsuan Pan", "Short and robust silicon mode (de)multiplexers using shortcuts to adiabaticity", "2015", "/home/aztar/Dropbox/SyncHacc/Peroni19/Papers/oe-23-8-10405.pdf", 28, [], "", 0)
 papers.append(newPaper28)
 
-newPaper29 = PaperData("M. Bukov", "Geometric Speed Limit of Accessible Many-Body State Preparation", "2019", "/home/aztar/Dropbox/SyncHacc/Peroni19/PapersWithTwoCol/PhysRevX.9.011034.pdf", 29, [], "", 0)
+newPaper29 = PaperData("H. Zhang", "Fast and robust quantum control for multimode interactions using shortcuts to adiabaticity", "2019", "/home/aztar/Dropbox/SyncHacc/Peroni19/PapersWithTwoCol/oe-27-5-7384.pdf", 29, [], "", 0)
 papers.append(newPaper29)
 
 newPaper30 = PaperData("Xiao-Jing Lu", "Fast and robust population transfer in two-level quantum systems with dephasing noise and/or systematic frequency errors", "2013", "/home/aztar/Dropbox/SyncHacc/Peroni19/PapersWithTwoCol/PhysRevA.88.033406.pdf", 30, [], "", 0)
@@ -234,7 +234,6 @@ def displayPDFs():
 
 
 folder = 0
-
 
 while True:
 
