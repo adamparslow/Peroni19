@@ -1,5 +1,5 @@
 class PaperData: 
-    def __init__(self, author, title, year, id, citations):
+    def __init__(self, author, title, year, id, citations, url):
         self.author = author
         self.title = title
         self.year = year
@@ -7,6 +7,7 @@ class PaperData:
         self.citations = citations
         self.x = 0
         self.y = 0
+        self.url = url
         
         self.addNewLines()
         
