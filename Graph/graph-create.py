@@ -7,13 +7,14 @@ def createEdge(graph, src, dest):
     graph.add_edge(src, dest)
     
 def createNode(graph, node, x, y):
-    graph.add_node(node, pos=str(x) + ", " + str(y) + "!")
+    name = str(node) + '\n' + "Does this work"
+    graph.add_node(node, pos=str(x) + ", " + str(y) + "!", label=name)
 
 A.node_attr['style']='filled'
 createNode(A, 1, 0, 0)
-createNode(A, 2, 1, 0)
-createNode(A, 3, 2, 3.12)
-createNode(A, 5, 3, 0)
+createNode(A, 2, 3, 0)
+createNode(A, 3, 6, 3.12)
+createNode(A, 5, 9, 0)
 
 createEdge(A, 1, 2)
 createEdge(A, 2, 3)
