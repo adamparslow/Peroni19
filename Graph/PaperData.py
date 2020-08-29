@@ -8,7 +8,7 @@ class PaperData:
         self.citations = citations
         self.x = 0
         self.y = 0
-        self.url = url
+        self.url = fileName
         self.numPages = numPages
         
         self.addNewLines()
