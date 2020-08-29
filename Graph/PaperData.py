@@ -1,8 +1,9 @@
 class PaperData: 
-    def __init__(self, author, title, year, id, citations, url, numWords):
+    def __init__(self, author, title, year, fileName, id, citations, url, numWords):
         self.author = author
         self.title = title
         self.year = year
+        self.fileName = fileName
         self.id = id
         self.citations = citations
         self.x = 0

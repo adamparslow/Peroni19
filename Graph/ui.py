@@ -5,7 +5,7 @@ import os.path
 import sys
 import pdfreader
 from pdfreader import PDFDocument, SimplePDFViewer
-#from PaperData import *
+from PaperData import *
 
 from PyPDF2 import PdfFileReader
 
@@ -75,7 +75,7 @@ file_list_column = [
 def pdfSelectedViewer(numRows):
 
     pdfSelected = []
-    pdfSelected.append([sg.Text("choose PDFs from list on left: ")])
+    pdfSelected.append([sg.Text("Choose PDFs from list on left: ")])
 
     pdfSelected.append([sg.Listbox(values=[], enable_events=True, size=(40, 20), key="selectedList")])
     pdfSelected.append([sg.Text("Enter Desired Output File: ")])
@@ -101,7 +101,7 @@ layout = [
 
 ]
 
-window = sg.Window("PDF Interface", layout)
+window = sg.Window("Select PDFs to Map", layout)
 selectedFileList = []
 
 
@@ -111,6 +111,7 @@ def pdfSelectedListboxManager():
     global selectedFileList
     global currId
     global window
+    global papers
 
 
     try:
@@ -132,8 +133,11 @@ def pdfSelectedListboxManager():
         temp["title"] = title
         temp["authors"] = authors
         year = text1
-        newPaper = PaperData(authors, title, year, currId)
+
+        newPaper = PaperData(authors, title, year, currId, [], "", 0)
         currId += 1
+        papers.append(newPaper)
+
         selectedFileList.append(temp)
 
     tempArray = []
