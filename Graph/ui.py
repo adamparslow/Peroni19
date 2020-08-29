@@ -9,6 +9,8 @@ from PaperData import *
 
 from PyPDF2 import PdfFileReader
 
+from graphCreate import *
+
 papers = []
 
 report_names = []
@@ -205,19 +207,19 @@ def displayPDFs():
 
 folder = 0
 
-newPaper24 = PaperData("M V Berry", "Transitionless quantum driving", "2009", "/home/olgap/Desktop/Hackathons/SYNCS_hack2020/Peroni19/Papers/Berry2009.pdf", 24, [], "", 0)
+newPaper24 = PaperData("M V Berry", "Transitionless quantum driving", "2009", "/home/aztar/Dropbox/SyncHacc/Peroni19/Papers/Berry2009.pdf", 24, [], "", 0)
 papers.append(newPaper24)
 
-#newPaper25 = PaperData("E. Torrontegui, S. Ibanez, S. Martinez-Garaot, M. Modugno,A. del Campo, D. Gu´ery-Odelin, A. Ruschhaupt, Xi Chen, J. G. Muga", "Shortcuts to adiabaticity", "2015", "/home/olgap/Desktop/Hackathons/SYNCS_hack2020/Peroni19/Papers/muga2015.pdf", 25, [], "", 0)
-#papers.append(newPaper25)
+newPaper25 = PaperData("E. Torrontegui", "Shortcuts to adiabaticity", "2015", "/home/aztar/Dropbox/SyncHacc/Peroni19/Papers/muga2015.pdf", 25, [], "", 0)
+papers.append(newPaper25)
 
-newPaper26 = PaperData("Shuo-Yen Tseng", "Counterdiabatic mode-evolution based coupled-waveguide devices", "2013", "/home/olgap/Desktop/Hackathons/SYNCS_hack2020/Peroni19/Papers/oe-21-18-21224.pdf", 26, [], "", 0)
+newPaper26 = PaperData("Shuo-Yen Tseng", "Counterdiabatic mode-evolution based coupled-waveguide devices", "2013", "/home/aztar/Dropbox/SyncHacc/Peroni19/Papers/oe-21-18-21224.pdf", 26, [], "", 0)
 papers.append(newPaper26)
 
-newPaper27 = PaperData("Shuo-Yen Tseng, Rui-Dan Wen, Ying-Feng Chiu, and Xi Chen", "Short and robust directional couplers designed by shortcuts to adiabaticity", "2014", "/home/olgap/Desktop/Hackathons/SYNCS_hack2020/Peroni19/Papers/oe-22-16-18849.pdf", 27, [], "", 0)
+newPaper27 = PaperData("Shuo-Yen Tseng", "Short and robust directional couplers designed by shortcuts to adiabaticity", "2014", "/home/aztar/Dropbox/SyncHacc/Peroni19/Papers/oe-22-16-18849.pdf", 27, [], "", 0)
 papers.append(newPaper27)
 
-newPaper28 = PaperData("Tzu-Hsuan Pan, Shuo-Yen Tseng", "Short and robust silicon mode (de)multiplexers using shortcuts to adiabaticity", "2015", "/home/olgap/Desktop/Hackathons/SYNCS_hack2020/Peroni19/Papers/oe-23-8-10405.pdf", 28, [], "", 0)
+newPaper28 = PaperData("Tzu-Hsuan Pan, Shuo-Yen Tseng", "Short and robust silicon mode (de)multiplexers using shortcuts to adiabaticity", "2015", "/home/aztar/Dropbox/SyncHacc/Peroni19/Papers/oe-23-8-10405.pdf", 28, [], "", 0)
 papers.append(newPaper28)
 
 
@@ -246,8 +248,10 @@ while True:
         links = findCitations(papers)
 
         print('execute')
+        makeGraph(papers, values["output"])
         
         print(values["output"])
+        break
 
 
 

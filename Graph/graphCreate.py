@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 import matplotlib 
 import drawSvg as draw
 from drawSvg.widgets import DrawingWidget
-import svgutils.transform as sg
+import svgutils.transform as svg
 import sys 
 import os
 
@@ -54,7 +54,7 @@ def writeBoxContents(paper):
 	return stringToWrite
 
 def getNumWords(paper):
-	return paper.numWords
+	return paper.numPages
 
 def drawTimeline(minYear, maxYear, width=3279, margin=200):
 	boxStart = margin
@@ -111,7 +111,7 @@ def makeGraph(papers, output):
 		colorFn = plt.get_cmap("Wistia")
 
 		# calculation would be something like
-		rgb = colorFn((paper.numWords-minWords)/(maxWords-minWords))[:3]
+		rgb = colorFn((paper.numPages-minWords)/(maxWords-minWords))[:3]
 		hex = matplotlib.colors.rgb2hex(rgb)
 
 		createNode(A, paper.id, paper.x, paper.y, writeBoxContents(paper), paper.url, hex)
@@ -131,11 +131,11 @@ def makeGraph(papers, output):
 	drawTimeline(minYear, maxYear)
 	createKey(minWords, maxWords)
 
-	fig = sg.SVGFigure("3279pt", "788pt")
+	fig = svg.SVGFigure("3279pt", "788pt")
 
-	fig1 = sg.fromfile('key.svg')
-	fig2 = sg.fromfile('map.svg')
-	fig3 = sg.fromfile('timeline.svg')
+	fig1 = svg.fromfile('key.svg')
+	fig2 = svg.fromfile('map.svg')
+	fig3 = svg.fromfile('timeline.svg')
 
 	plot1 = fig1.getroot()
 	plot1.moveto(2829, 100)
@@ -152,16 +152,16 @@ def makeGraph(papers, output):
 	os.remove('key.svg')
 	
 
-dummyData = []
+# dummyData = []
 
-dummyData.append(PaperData("Berry","Transitionless quantum driving","2009",1,[2,3,4,6], "http://www.google.com", 10))
-dummyData.append(PaperData("Berry","Transitionless quantum driving again","2009",7,[2,3,4,6], "http://www.google.com", 20))
-dummyData.append(PaperData("Berry","Transitionless quantum driving again again","2009",8,[2,3,4,6], "http://www.google.com", 30))
-dummyData.append(PaperData("Tseng","Counterdiabatic mode-evolution based coupled-waveguide devices","2013",2,[], "/home/aztar/Downloads/Paper.pdf", 40))
-dummyData.append(PaperData("Muga","Shortcuts to adiabaticity","2015",3,[6], "", 60))
-dummyData.append(PaperData("Tseng","Engineering of fast mode conversion in multimode waveguides","2012",4,[3], "", 70))
-dummyData.append(PaperData("Tseng","Engineering of fast mode conversion in multimode waveguides again","2012",10,[3], "", 80))
-dummyData.append(PaperData("Guo","Silicon mode (de)multiplexers with parameters optimized using shortcuts to adiabaticity","2017",5,[6], "", 90))
-dummyData.append(PaperData("Guery-Odelin","Shortcuts to adiabaticity: Concepts, methods, and applications","2019",6,[], "", 10))
-makeGraph(dummyData, "combined")
+# dummyData.append(PaperData("Berry","Transitionless quantum driving","2009",1,[2,3,4,6], "http://www.google.com", 10))
+# dummyData.append(PaperData("Berry","Transitionless quantum driving again","2009",7,[2,3,4,6], "http://www.google.com", 20))
+# dummyData.append(PaperData("Berry","Transitionless quantum driving again again","2009",8,[2,3,4,6], "http://www.google.com", 30))
+# dummyData.append(PaperData("Tseng","Counterdiabatic mode-evolution based coupled-waveguide devices","2013",2,[], "/home/aztar/Downloads/Paper.pdf", 40))
+# dummyData.append(PaperData("Muga","Shortcuts to adiabaticity","2015",3,[6], "", 60))
+# dummyData.append(PaperData("Tseng","Engineering of fast mode conversion in multimode waveguides","2012",4,[3], "", 70))
+# dummyData.append(PaperData("Tseng","Engineering of fast mode conversion in multimode waveguides again","2012",10,[3], "", 80))
+# dummyData.append(PaperData("Guo","Silicon mode (de)multiplexers with parameters optimized using shortcuts to adiabaticity","2017",5,[6], "", 90))
+# dummyData.append(PaperData("Guery-Odelin","Shortcuts to adiabaticity: Concepts, methods, and applications","2019",6,[], "", 10))
+# makeGraph(dummyData, "combined")
 
