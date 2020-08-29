@@ -11,7 +11,7 @@
 <!-- 1 -->
 <g id="node1" class="node">
 <title>1</title>
-<polygon fill="lightgrey" stroke="black" points="377,-156 0,-156 0,-12 377,-12 377,-156"/>
+<polygon fill="#e9fb68" stroke="black" points="377,-156 0,-156 0,-12 377,-12 377,-156"/>
 <text text-anchor="middle" x="188.5" y="-108.8" font-family="Times,serif" font-size="29.00">Berry (2009)</text>
 <text text-anchor="middle" x="188.5" y="-76.8" font-family="Times,serif" font-size="29.00">&quot;Transitionless quantum</text>
 <text text-anchor="middle" x="188.5" y="-44.8" font-family="Times,serif" font-size="29.00">driving&quot;</text>
@@ -19,7 +19,7 @@
 <!-- 2 -->
 <g id="node2" class="node">
 <title>2</title>
-<polygon fill="lightgrey" stroke="black" points="1539,-168 1142,-168 1142,0 1539,0 1539,-168"/>
+<polygon fill="#ffa000" stroke="black" points="1539,-168 1142,-168 1142,0 1539,0 1539,-168"/>
 <text text-anchor="middle" x="1340.5" y="-140.8" font-family="Times,serif" font-size="29.00">Tseng (2013)</text>
 <text text-anchor="middle" x="1340.5" y="-108.8" font-family="Times,serif" font-size="29.00">&quot;Counterdiabatic</text>
 <text text-anchor="middle" x="1340.5" y="-76.8" font-family="Times,serif" font-size="29.00">mode&#45;evolution</text>
@@ -35,7 +35,7 @@
 <!-- 3 -->
 <g id="node3" class="node">
 <title>3</title>
-<polygon fill="lightgrey" stroke="black" points="2120,-372 1713,-372 1713,-228 2120,-228 2120,-372"/>
+<polygon fill="#e4ff7a" stroke="black" points="2120,-372 1713,-372 1713,-228 2120,-228 2120,-372"/>
 <text text-anchor="middle" x="1916.5" y="-308.8" font-family="Times,serif" font-size="29.00">Muga (2015)</text>
 <text text-anchor="middle" x="1916.5" y="-276.8" font-family="Times,serif" font-size="29.00">&quot;Shortcuts to adiabaticity&quot;</text>
 </g>
@@ -48,7 +48,7 @@
 <!-- 4 -->
 <g id="node4" class="node">
 <title>4</title>
-<polygon fill="lightgrey" stroke="black" points="1256,-372 849,-372 849,-228 1256,-228 1256,-372"/>
+<polygon fill="#fc7f00" stroke="black" points="1256,-372 849,-372 849,-228 1256,-228 1256,-372"/>
 <text text-anchor="middle" x="1052.5" y="-340.8" font-family="Times,serif" font-size="29.00">Tseng (2012)</text>
 <text text-anchor="middle" x="1052.5" y="-308.8" font-family="Times,serif" font-size="29.00">&quot;Engineering of fast</text>
 <text text-anchor="middle" x="1052.5" y="-276.8" font-family="Times,serif" font-size="29.00">mode conversion</text>
@@ -63,7 +63,7 @@
 <!-- 6 -->
 <g id="node5" class="node">
 <title>6</title>
-<polygon fill="lightgrey" stroke="black" points="3270.5,-372 2866.5,-372 2866.5,-228 3270.5,-228 3270.5,-372"/>
+<polygon fill="#fd8c00" stroke="black" points="3270.5,-372 2866.5,-372 2866.5,-228 3270.5,-228 3270.5,-372"/>
 <text text-anchor="middle" x="3068.5" y="-340.8" font-family="Times,serif" font-size="29.00">Guery&#45;Odelin (2019)</text>
 <text text-anchor="middle" x="3068.5" y="-308.8" font-family="Times,serif" font-size="29.00">&quot;Shortcuts to adiabaticity:</text>
 <text text-anchor="middle" x="3068.5" y="-276.8" font-family="Times,serif" font-size="29.00">Concepts, methods,</text>
@@ -90,7 +90,7 @@
 <!-- 5 -->
 <g id="node6" class="node">
 <title>5</title>
-<polygon fill="lightgrey" stroke="black" points="2727.5,-168 2257.5,-168 2257.5,0 2727.5,0 2727.5,-168"/>
+<polygon fill="#ffd710" stroke="black" points="2727.5,-168 2257.5,-168 2257.5,0 2727.5,0 2727.5,-168"/>
 <text text-anchor="middle" x="2492.5" y="-140.8" font-family="Times,serif" font-size="29.00">Guo (2017)</text>
 <text text-anchor="middle" x="2492.5" y="-108.8" font-family="Times,serif" font-size="29.00">&quot;Silicon mode (de)multiplexers</text>
 <text text-anchor="middle" x="2492.5" y="-76.8" font-family="Times,serif" font-size="29.00">with parameters</text>
