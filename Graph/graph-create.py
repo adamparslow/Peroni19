@@ -63,7 +63,7 @@ def drawTimeline(minYear, maxYear, width=3279, margin=200):
 	tickHeight = 15
 	thickness = 5
 	height = 80
-	correctionFactor = 27
+	correctionFactor = 35
 	d = draw.Drawing(width, height)
 
 	d.append(draw.Rectangle(0, 0, width, height, fill='white'))
@@ -77,6 +77,26 @@ def drawTimeline(minYear, maxYear, width=3279, margin=200):
 		d.append(draw.Text(str(minYear + tick), 29, x-correctionFactor, y - 24))
 
 	d.saveSvg('timeline.svg')
+
+def createKey(minWords, maxWords):
+	d = draw.Drawing(450, 100)
+	colorFn = plt.get_cmap("Wistia")
+	x = 70
+	y = 50
+	length = 300
+	width = 30
+	g = draw.LinearGradient(x, y, x+length, y+width)
+	min = matplotlib.colors.rgb2hex(colorFn(0)[:3])
+	max = matplotlib.colors.rgb2hex(colorFn(1.0)[:3])
+	g.addStop(0, min, 1)
+	g.addStop(1, max, 1)
+	d.append(draw.Text("Key", 29, 0, 55))
+	d.append(draw.Text(str(minWords), 29, 50, 20))
+	d.append(draw.Text("Pages", 29, 178, 20))
+	d.append(draw.Text(str(maxWords), 29, 350, 20))
+	d.append(draw.Rectangle(x, y, length, width, stroke='black', stroke_width=1, fill=g))
+
+	d.saveSvg('key.svg')
 	
 def makeGraph(papers, output):
 	A = pgv.AGraph(directed=True, overlap=True, splines="ortho")
@@ -109,50 +129,41 @@ def makeGraph(papers, output):
 	maxYear = max(years)
 
 	drawTimeline(minYear, maxYear)
+	createKey(minWords, maxWords)
 
-	fig = sg.SVGFigure("3279pt", "688pt")
+	fig = sg.SVGFigure("3279pt", "788pt")
 
-	fig1 = sg.fromfile('map.svg')
-	fig2 = sg.fromfile('timeline.svg')
+	fig1 = sg.fromfile('key.svg')
+	print(fig1)
+	fig2 = sg.fromfile('map.svg')
+	print(fig2)
+	fig3 = sg.fromfile('timeline.svg')
 
 	plot1 = fig1.getroot()
+	plot1.moveto(0, 788)
 	plot2 = fig2.getroot()
-	plot2.moveto(0, 688)
+	# plot2.moveto(0, 100)
+	plot3 = fig3.getroot()
+	plot3.moveto(0, 688)
 
-	fig.append([plot1, plot2])
+	fig.append([plot2, plot3, plot1])
 
 	fig.save(output + ".svg")
 	os.remove('map.svg')
 	os.remove('timeline.svg')
+	os.remove('key.svg')
+	
 
 dummyData = []
 
-dummyData.append(PaperData("Berry","Transitionless quantum driving","2009",1,[2,3,4,6], "http://www.google.com", 100))
-dummyData.append(PaperData("Berry","Transitionless quantum driving again","2009",7,[2,3,4,6], "http://www.google.com", 200))
-dummyData.append(PaperData("Berry","Transitionless quantum driving again again","2009",8,[2,3,4,6], "http://www.google.com", 300))
-dummyData.append(PaperData("Tseng","Counterdiabatic mode-evolution based coupled-waveguide devices","2013",2,[], "/home/aztar/Downloads/Paper.pdf", 400))
-dummyData.append(PaperData("Muga","Shortcuts to adiabaticity","2015",3,[6], "", 600))
-dummyData.append(PaperData("Tseng","Engineering of fast mode conversion in multimode waveguides","2012",4,[3], "", 700))
-dummyData.append(PaperData("Tseng","Engineering of fast mode conversion in multimode waveguides again","2012",10,[3], "", 800))
-dummyData.append(PaperData("Guo","Silicon mode (de)multiplexers with parameters optimized using shortcuts to adiabaticity","2017",5,[6], "", 900))
-dummyData.append(PaperData("Guery-Odelin","Shortcuts to adiabaticity: Concepts, methods, and applications","2019",6,[], "", 1000))
+dummyData.append(PaperData("Berry","Transitionless quantum driving","2009",1,[2,3,4,6], "http://www.google.com", 10))
+dummyData.append(PaperData("Berry","Transitionless quantum driving again","2009",7,[2,3,4,6], "http://www.google.com", 20))
+dummyData.append(PaperData("Berry","Transitionless quantum driving again again","2009",8,[2,3,4,6], "http://www.google.com", 30))
+dummyData.append(PaperData("Tseng","Counterdiabatic mode-evolution based coupled-waveguide devices","2013",2,[], "/home/aztar/Downloads/Paper.pdf", 40))
+dummyData.append(PaperData("Muga","Shortcuts to adiabaticity","2015",3,[6], "", 60))
+dummyData.append(PaperData("Tseng","Engineering of fast mode conversion in multimode waveguides","2012",4,[3], "", 70))
+dummyData.append(PaperData("Tseng","Engineering of fast mode conversion in multimode waveguides again","2012",10,[3], "", 80))
+dummyData.append(PaperData("Guo","Silicon mode (de)multiplexers with parameters optimized using shortcuts to adiabaticity","2017",5,[6], "", 90))
+dummyData.append(PaperData("Guery-Odelin","Shortcuts to adiabaticity: Concepts, methods, and applications","2019",6,[], "", 10))
 makeGraph(dummyData, "combined")
 
-d = draw.Drawing(1000, 1000)
-
-colorFn = plt.get_cmap("Wistia")
-g = draw.LinearGradient(0, 50, 50, 55)
-
-min = matplotlib.colors.rgb2hex(colorFn(0))
-print(min)
-max = matplotlib.colors.rgb2hex(colorFn(1))
-print(max)
-g.addStop(0, min, 1)
-g.addStop(1, max, 1)
-d.append(draw.Rectangle(0, 50, 50, 5, stroke='black', stroke_width=0.002, fill=g))
-
-# rgb = colorFn((paper.numWords-minWords)/(maxWords-minWords))[:3]
-# hex = matplotlib.colors.rgb2hex(rgb)
-
-# calculation would be something like
-d.saveSvg('key.svg')
