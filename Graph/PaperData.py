@@ -24,10 +24,3 @@ class PaperData:
                 charIndex += 1
         self.title = "".join(charList)
 
-
-    def setCitations(citations):
-        self.citations = citations
-
-
-
-
