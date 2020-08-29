@@ -1,32 +1,41 @@
+import sys
 import pdfreader
 from pdfreader import PDFDocument, SimplePDFViewer
 
 from PyPDF2 import PdfFileReader
 
-file_name = "./papers/muga2015.pdf"
-
-fd = open(file_name, "rb")
+#file_name = "./papers/muga2015.pdf"
+report_names = []
 '''
-doc = PDFDocument(fd)
-
-viewer = SimplePDFViewer(fd)
-viewer.navigate(46)
-viewer.render()
-#print(viewer.canvas.text_content)
-print(viewer.canvas.strings)
-with open("tutorial-sample-content-stream-p2.txt", "w+") as f:
-	f.write(viewer.canvas.text_content)
-
+enter everything into the report names`
 '''
+outgoing_links = {}
+file_names = []
+
+#file_name = "./PapersWithTwoCol/4 - RevModPhys.91.045001.pdf"
 
 
-pdf = PdfFileReader(file_name)
-pdf.getNumPages()
-first_page = pdf.getPage(45)
+for file_name in file_names:
+	pdf = PdfFileReader(file_name)
+	pdf_length = pdf.getNumPages()
+	#print(pdf.documentInfo)
 
-raw = first_page.extractText()
-raw = raw.replace('\n', '')
-print(bytes(raw, 'ASCII'))
+	for page_number in range(pdf_length):
+		page = pdf.getPage(page_number)
+		raw = page.extractText()
+		raw = raw.replace('\n', '')
+		#print(bytes(raw, 'ASCII'))
 
-with open("hole.txt", "w+") as f:
-	f.write(raw)
+		#with open("hole.txt", "w+") as f:
+		#	f.write(raw)
+
+		for report in report_names:
+			if report in raw:
+				if len(outgoing_links[report]) == 0:
+					outgoing_links[report] = []
+				info = {}
+				pdf_info[title] = pdf.documentInfo.title
+				pdf_info[author] = pdf.documentInfo.author
+				pdf_info[creationdate] = pdf.documentInfo.creationdate
+				outgoing_links[report].append(pdf_info)
+
