@@ -1,21 +1,24 @@
 import pygraphviz as pgv
 from PaperData import *
+import matplotlib.pyplot as plt
+import matplotlib 
+import drawSvg as draw
+from drawSvg.widgets import DrawingWidget
 
 A = pgv.AGraph(directed=True, overlap=True, splines="ortho")
 
 def createEdge(graph, src, dest): 
 	graph.add_edge(src, dest)
 	
-def createNode(graph, node, x, y, label, url, height=2, width=3):
+def createNode(graph, node, x, y, label, url, color, height=2, width=3):
 	graph.add_node(node, pos=str(x) + ", " + str(y) + "!", 
-	label=label, height=height, width=width, 
-	shape="polygon", sides=4, fontsize=29, 
-	color="red", href=url)
+		label=label, height=height, width=width, 
+		shape="polygon", sides=4, fontsize=29, fillcolor=color, href=url)
 
 def getYear(paper):
 	return int(paper.year)
 
-def getTimescale(papers, widthPerYear=4, edgeWidth=0.5, height=3):
+def getTimescale(papers, widthPerYear=4, edgeWidth=10, height=3):
 	years = list(map(getYear, papers))
 	
 	timeBounds = [min(years),max(years)]
@@ -49,25 +52,58 @@ def writeBoxContents(paper):
 
 	return stringToWrite
 
+def getNumWords(paper):
+	return paper.numWords
+
+def drawTimeline(minYear, maxYear, width=2000, margin=27):
+	boxStart = margin
+	boxEnd = width - margin
+	numTicks = maxYear - minYear + 1
+	tickHeight = 15
+	thickness = 5
+	height = 80
+	correctionFactor = 27
+	d = draw.Drawing(width, height)
+
+	d.append(draw.Rectangle(0, 0, width, height, fill='white'))
+	d.append(draw.Rectangle(boxStart, height/2, boxEnd - boxStart, thickness, fill='black'))
+	tickSeparation = (boxEnd - boxStart - thickness) / (numTicks-1)
+
+	for tick in range(numTicks):
+		x = boxStart + tick * tickSeparation
+		y = height/2 - tickHeight
+		d.append(draw.Rectangle(x, y, thickness, tickHeight, fill='black'))
+		d.append(draw.Text(str(minYear + tick), 29, x-correctionFactor, y - 20))
+
+	d.saveSvg('timeline.svg')
+
 dummyData = []
 
-dummyData.append(PaperData("Berry","Transitionless quantum driving","2009",1,[2,3,4,6], "http://www.google.com"))
-dummyData.append(PaperData("Berry","Transitionless quantum driving again","2009",7,[2,3,4,6], "http://www.google.com"))
-dummyData.append(PaperData("Berry","Transitionless quantum driving again again","2009",8,[2,3,4,6], "http://www.google.com"))
-dummyData.append(PaperData("Tseng","Counterdiabatic mode-evolution based coupled-waveguide devices","2013",2,[], "/home/aztar/Downloads/Paper.pdf"))
-dummyData.append(PaperData("Tseng","Counterdiabatic mode-evolution based coupled-waveguide devices again","2013",9,[], "/home/aztar/Downloads/Paper.pdf"))
-dummyData.append(PaperData("Muga","Shortcuts to adiabaticity","2015",3,[6], ""))
-dummyData.append(PaperData("Tseng","Engineering of fast mode conversion in multimode waveguides","2012",4,[3], ""))
-dummyData.append(PaperData("Tseng","Engineering of fast mode conversion in multimode waveguides again","2012",10,[3], ""))
-dummyData.append(PaperData("Guo","Silicon mode (de)multiplexers with parameters optimized using shortcuts to adiabaticity","2017",5,[6], ""))
-dummyData.append(PaperData("Guery-Odelin","Shortcuts to adiabaticity: Concepts, methods, and applications","2019",6,[], ""))
+dummyData.append(PaperData("Berry","Transitionless quantum driving","2009",1,[2,3,4,6], "http://www.google.com", 100))
+dummyData.append(PaperData("Berry","Transitionless quantum driving again","2009",7,[2,3,4,6], "http://www.google.com", 200))
+dummyData.append(PaperData("Berry","Transitionless quantum driving again again","2009",8,[2,3,4,6], "http://www.google.com", 300))
+dummyData.append(PaperData("Tseng","Counterdiabatic mode-evolution based coupled-waveguide devices","2013",2,[], "/home/aztar/Downloads/Paper.pdf", 400))
+dummyData.append(PaperData("Muga","Shortcuts to adiabaticity","2015",3,[6], "", 600))
+dummyData.append(PaperData("Tseng","Engineering of fast mode conversion in multimode waveguides","2012",4,[3], "", 700))
+dummyData.append(PaperData("Tseng","Engineering of fast mode conversion in multimode waveguides again","2012",10,[3], "", 800))
+dummyData.append(PaperData("Guo","Silicon mode (de)multiplexers with parameters optimized using shortcuts to adiabaticity","2017",5,[6], "", 900))
+dummyData.append(PaperData("Guery-Odelin","Shortcuts to adiabaticity: Concepts, methods, and applications","2019",6,[], "", 1000))
 
 dummySorted = sorted(dummyData, key=lambda paper: paper.year)
+words = list(map(getNumWords, dummySorted))
+minWords = min(words)
+maxWords = max(words)
 
 getTimescale(dummySorted)
 
 for paper in dummySorted:
-	createNode(A, paper.id, paper.x, paper.y, writeBoxContents(paper), paper.url)
+	colorFn = plt.get_cmap("Wistia")
+
+	# calculation would be something like
+	rgb = colorFn((paper.numWords-minWords)/(maxWords-minWords))[:3]
+	hex = matplotlib.colors.rgb2hex(rgb)
+
+	createNode(A, paper.id, paper.x, paper.y, writeBoxContents(paper), paper.url, hex)
 	
 	for cit in paper.citations:
 		createEdge(A, paper.id, cit)
@@ -76,3 +112,9 @@ A.node_attr['style']='filled'
 
 A.layout(prog='neato')
 A.draw('map.svg', format='svg')
+
+years = list(map(getYear, dummySorted))
+minYear = min(years)
+maxYear = max(years)
+
+drawTimeline(minYear, maxYear)
