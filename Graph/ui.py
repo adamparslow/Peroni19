@@ -209,9 +209,12 @@ folder = 0
 
 newPaper24 = PaperData("M V Berry", "Transitionless quantum driving", "2009", "/home/aztar/Dropbox/SyncHacc/Peroni19/Papers/Berry2009.pdf", 24, [], "", 0)
 papers.append(newPaper24)
+selectedFileList.append({"title": "Transitionless quantum driving", "authors": "M V Berry", "fileName": "/home/aztar/Dropbox/SyncHacc/Peroni19/Papers/Berry2009.pdf"})
 
 newPaper25 = PaperData("E. Torrontegui", "Shortcuts to adiabaticity", "2015", "/home/aztar/Dropbox/SyncHacc/Peroni19/Papers/muga2015.pdf", 25, [], "", 0)
 papers.append(newPaper25)
+selectedFileList.append({"title": "Shortcuts to adiabaticity", "authors": "E. Torrontegui", "fileName": "/home/aztar/Dropbox/SyncHacc/Peroni19/Papers/muga2015.pdf"})
+
 
 newPaper26 = PaperData("Shuo-Yen Tseng", "Counterdiabatic mode-evolution based coupled-waveguide devices", "2013", "/home/aztar/Dropbox/SyncHacc/Peroni19/Papers/oe-21-18-21224.pdf", 26, [], "", 0)
 papers.append(newPaper26)
