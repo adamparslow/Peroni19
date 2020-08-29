@@ -9,7 +9,7 @@ import sys
 import os
 
 def createEdge(graph, src, dest): 
-	graph.add_edge(dest, src)
+	graph.add_edge(dest, src, arrowsize=3.0)
 	
 def createNode(graph, node, x, y, label, url, color, height=2, width=3):
 	graph.add_node(node, pos=str(x) + ", " + str(y) + "!", 
@@ -19,7 +19,7 @@ def createNode(graph, node, x, y, label, url, color, height=2, width=3):
 def getYear(paper):
 	return int(paper.year)
 
-def getTimescale(papers, widthPerYear=4, edgeWidth=10, height=3):
+def getTimescale(papers, widthPerYear=4, edgeWidth=10, height=4):
 	years = list(map(getYear, papers))
 	
 	timeBounds = [min(years),max(years)]
@@ -131,7 +131,7 @@ def makeGraph(papers, output):
 	drawTimeline(minYear, maxYear)
 	createKey(minWords, maxWords)
 
-	fig = svg.SVGFigure("3279pt", "850pt")
+	fig = svg.SVGFigure("3279pt", "1000pt")
 
 	fig1 = svg.fromfile('key.svg')
 	fig2 = svg.fromfile('map.svg')
@@ -142,7 +142,7 @@ def makeGraph(papers, output):
 	plot2 = fig2.getroot()
 	plot2.moveto(0, 100)
 	plot3 = fig3.getroot()
-	plot3.moveto(0, 850)
+	plot3.moveto(0, 1000)
 
 	fig.append([plot2, plot3, plot1])
 
