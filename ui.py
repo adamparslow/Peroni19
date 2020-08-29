@@ -35,8 +35,8 @@ def pdfSelectedViewer(numRows):
     pdfSelected.append([sg.Text("choose PDF's from list on left: ")])
 
     pdfSelected.append([sg.Listbox(values=[], enable_events=True, size=(40, 20), key="selectedList")])
-
-
+    pdfSelected.append([sg.Text("Enter Desired Output FileName: ")])
+    pdfSelected.append([sg.InputText(do_not_clear = True, key = "output")])
     pdfSelected.append([sg.Button('execute')])
     return pdfSelected
 
@@ -93,7 +93,7 @@ def pdfSelectedListboxManager():
     tempArray = []
 
     for entry in selectedFileList:
-        tempArray.append(entry["fileName"])
+        tempArray.append(str(entry["fileName"]) + "\t" + str(entry["title"]))
 
 
     window["selectedList"].update(tempArray)
@@ -159,6 +159,7 @@ while True:
     elif event == 'execute':
         print('execute')
         print(folder)
+        print(values["output"])
 
 
 
