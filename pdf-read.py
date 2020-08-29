@@ -4,39 +4,30 @@ from pdfreader import PDFDocument, SimplePDFViewer
 
 from PyPDF2 import PdfFileReader
 
-#file_name = "./papers/muga2015.pdf"
-report_names = []
-'''
-enter everything into the report names`
-'''
+#Set up. This will contain the links FROM a given report TO everything it points to.
 outgoing_links = {}
+#File names need to be entered manually
 file_names = []
+#Report names come from Cavell's UI
+report_names = []
 
-#file_name = "./PapersWithTwoCol/4 - RevModPhys.91.045001.pdf"
 
-
+#Open each of the files that were specified. 
 for file_name in file_names:
 	pdf = PdfFileReader(file_name)
 	pdf_length = pdf.getNumPages()
-	#print(pdf.documentInfo)
 
+	#Read through each page in the file and extract the text from it
 	for page_number in range(pdf_length):
 		page = pdf.getPage(page_number)
 		raw = page.extractText()
 		raw = raw.replace('\n', '')
-		#print(bytes(raw, 'ASCII'))
-
-		#with open("hole.txt", "w+") as f:
-		#	f.write(raw)
-
+	
+		#Check if the page that we are currently on contains the name of any of the other reports that we are looking for links too
 		for report in report_names:
 			if report in raw:
 				if len(outgoing_links[report]) == 0:
 					outgoing_links[report] = []
-				info = {}
-				pdf_info[searchable_title] = file_name
-				pdf_info[broken_title] = pdf.documentInfo.title
-				pdf_info[author] = pdf.documentInfo.author
-				pdf_info[creationdate] = pdf.documentInfo.creationdate
-				outgoing_links[report].append(pdf_info)
+				outgoing_links[file_name].append(report)
 
+return outgoing_links
