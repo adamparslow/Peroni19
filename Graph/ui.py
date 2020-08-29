@@ -151,9 +151,12 @@ def pdfSelectedListboxManager():
     global papers
     global report_names
 
+    print(selectedFileList)
+
     for entry in selectedFileList:
         print("help me")
         tempArray.append(str(entry["fileName"]) + "\t -> \t" + str(entry["title"]))
+    window["selectedList"].update(tempArray)
     
     try:
         filePath = os.path.join(
