@@ -197,27 +197,27 @@
 <rect x="0" y="-80" width="3279" height="80" fill="white"/>
 <rect x="200" y="-45.0" width="2879" height="5" fill="black"/>
 <rect x="200.0" y="-40.0" width="5" height="15" fill="black"/>
-<text x="173.0" y="-5.0" font-size="29">2009</text>
+<text x="173.0" y="-1.0" font-size="29">2009</text>
 <rect x="487.4" y="-40.0" width="5" height="15" fill="black"/>
-<text x="460.4" y="-5.0" font-size="29">2010</text>
+<text x="460.4" y="-1.0" font-size="29">2010</text>
 <rect x="774.8" y="-40.0" width="5" height="15" fill="black"/>
-<text x="747.8" y="-5.0" font-size="29">2011</text>
+<text x="747.8" y="-1.0" font-size="29">2011</text>
 <rect x="1062.1999999999998" y="-40.0" width="5" height="15" fill="black"/>
-<text x="1035.1999999999998" y="-5.0" font-size="29">2012</text>
+<text x="1035.1999999999998" y="-1.0" font-size="29">2012</text>
 <rect x="1349.6" y="-40.0" width="5" height="15" fill="black"/>
-<text x="1322.6" y="-5.0" font-size="29">2013</text>
+<text x="1322.6" y="-1.0" font-size="29">2013</text>
 <rect x="1637.0" y="-40.0" width="5" height="15" fill="black"/>
-<text x="1610.0" y="-5.0" font-size="29">2014</text>
+<text x="1610.0" y="-1.0" font-size="29">2014</text>
 <rect x="1924.3999999999999" y="-40.0" width="5" height="15" fill="black"/>
-<text x="1897.3999999999999" y="-5.0" font-size="29">2015</text>
+<text x="1897.3999999999999" y="-1.0" font-size="29">2015</text>
 <rect x="2211.7999999999997" y="-40.0" width="5" height="15" fill="black"/>
-<text x="2184.7999999999997" y="-5.0" font-size="29">2016</text>
+<text x="2184.7999999999997" y="-1.0" font-size="29">2016</text>
 <rect x="2499.2" y="-40.0" width="5" height="15" fill="black"/>
-<text x="2472.2" y="-5.0" font-size="29">2017</text>
+<text x="2472.2" y="-1.0" font-size="29">2017</text>
 <rect x="2786.6" y="-40.0" width="5" height="15" fill="black"/>
-<text x="2759.6" y="-5.0" font-size="29">2018</text>
+<text x="2759.6" y="-1.0" font-size="29">2018</text>
 <rect x="3074.0" y="-40.0" width="5" height="15" fill="black"/>
-<text x="3047.0" y="-5.0" font-size="29">2019</text>
+<text x="3047.0" y="-1.0" font-size="29">2019</text>
 </g>
   </g>
 </svg>

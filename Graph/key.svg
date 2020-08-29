@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+     width="1000" height="1000" viewBox="0 -1000 1000 1000">
+<defs>
+<linearGradient x1="0" y1="-50" x2="50" y2="-55" gradientUnits="userSpaceOnUse" id="d0">
+<stop offset="0" stop-color="#e4ff7a" stop-opacity="1" />
+<stop offset="1" stop-color="#e4ff78" stop-opacity="1" />
+</linearGradient>
+</defs>
+<rect x="0" y="-55" width="50" height="5" stroke="black" stroke-width="0.002" fill="url(#d0)" />
+</svg>
