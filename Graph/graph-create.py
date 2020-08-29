@@ -6,8 +6,7 @@ import drawSvg as draw
 from drawSvg.widgets import DrawingWidget
 import svgutils.transform as sg
 import sys 
-
-A = pgv.AGraph(directed=True, overlap=True, splines="ortho")
+import os
 
 def createEdge(graph, src, dest): 
 	graph.add_edge(src, dest)
@@ -78,6 +77,53 @@ def drawTimeline(minYear, maxYear, width=3279, margin=200):
 		d.append(draw.Text(str(minYear + tick), 29, x-correctionFactor, y - 20))
 
 	d.saveSvg('timeline.svg')
+	
+def makeGraph(papers, output):
+	A = pgv.AGraph(directed=True, overlap=True, splines="ortho")
+	papersSorted = sorted(papers, key=lambda paper: paper.year)
+	words = list(map(getNumWords, papersSorted))
+	minWords = min(words)
+	maxWords = max(words)
+
+	getTimescale(papersSorted)
+
+	for paper in papersSorted:
+		colorFn = plt.get_cmap("Wistia")
+
+		# calculation would be something like
+		rgb = colorFn((paper.numWords-minWords)/(maxWords-minWords))[:3]
+		hex = matplotlib.colors.rgb2hex(rgb)
+
+		createNode(A, paper.id, paper.x, paper.y, writeBoxContents(paper), paper.url, hex)
+		
+		for cit in paper.citations:
+			createEdge(A, paper.id, cit)
+
+	A.node_attr['style']='filled'
+
+	A.layout(prog='neato')
+	A.draw('map.svg', format='svg')
+
+	years = list(map(getYear, papersSorted))
+	minYear = min(years)
+	maxYear = max(years)
+
+	drawTimeline(minYear, maxYear)
+
+	fig = sg.SVGFigure("3279pt", "688pt")
+
+	fig1 = sg.fromfile('map.svg')
+	fig2 = sg.fromfile('timeline.svg')
+
+	plot1 = fig1.getroot()
+	plot2 = fig2.getroot()
+	plot2.moveto(0, 688)
+
+	fig.append([plot1, plot2])
+
+	fig.save(output + ".svg")
+	os.remove('map.svg')
+	os.remove('timeline.svg')
 
 dummyData = []
 
@@ -90,46 +136,4 @@ dummyData.append(PaperData("Tseng","Engineering of fast mode conversion in multi
 dummyData.append(PaperData("Tseng","Engineering of fast mode conversion in multimode waveguides again","2012",10,[3], "", 800))
 dummyData.append(PaperData("Guo","Silicon mode (de)multiplexers with parameters optimized using shortcuts to adiabaticity","2017",5,[6], "", 900))
 dummyData.append(PaperData("Guery-Odelin","Shortcuts to adiabaticity: Concepts, methods, and applications","2019",6,[], "", 1000))
-
-dummySorted = sorted(dummyData, key=lambda paper: paper.year)
-words = list(map(getNumWords, dummySorted))
-minWords = min(words)
-maxWords = max(words)
-
-getTimescale(dummySorted)
-
-for paper in dummySorted:
-	colorFn = plt.get_cmap("Wistia")
-
-	# calculation would be something like
-	rgb = colorFn((paper.numWords-minWords)/(maxWords-minWords))[:3]
-	hex = matplotlib.colors.rgb2hex(rgb)
-
-	createNode(A, paper.id, paper.x, paper.y, writeBoxContents(paper), paper.url, hex)
-	
-	for cit in paper.citations:
-		createEdge(A, paper.id, cit)
-
-A.node_attr['style']='filled'
-
-A.layout(prog='neato')
-A.draw('map.svg', format='svg')
-
-years = list(map(getYear, dummySorted))
-minYear = min(years)
-maxYear = max(years)
-
-drawTimeline(minYear, maxYear)
-
-fig = sg.SVGFigure("3279pt", "688pt")
-
-fig1 = sg.fromfile('map.svg')
-fig2 = sg.fromfile('timeline.svg')
-
-plot1 = fig1.getroot()
-plot2 = fig2.getroot()
-plot2.moveto(0, 688)
-
-fig.append([plot1, plot2])
-
-fig.save("combined.svg")
+makeGraph(dummyData, "combined")
