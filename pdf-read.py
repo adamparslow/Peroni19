@@ -34,7 +34,8 @@ for file_name in file_names:
 				if len(outgoing_links[report]) == 0:
 					outgoing_links[report] = []
 				info = {}
-				pdf_info[title] = pdf.documentInfo.title
+				pdf_info[searchable_title] = file_name
+				pdf_info[broken_title] = pdf.documentInfo.title
 				pdf_info[author] = pdf.documentInfo.author
 				pdf_info[creationdate] = pdf.documentInfo.creationdate
 				outgoing_links[report].append(pdf_info)
