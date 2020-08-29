@@ -74,7 +74,7 @@ def drawTimeline(minYear, maxYear, width=3279, margin=200):
 		x = boxStart + tick * tickSeparation
 		y = height/2 - tickHeight
 		d.append(draw.Rectangle(x, y, thickness, tickHeight, fill='black'))
-		d.append(draw.Text(str(minYear + tick), 29, x-correctionFactor, y - 20))
+		d.append(draw.Text(str(minYear + tick), 29, x-correctionFactor, y - 24))
 
 	d.saveSvg('timeline.svg')
 	
@@ -137,3 +137,22 @@ dummyData.append(PaperData("Tseng","Engineering of fast mode conversion in multi
 dummyData.append(PaperData("Guo","Silicon mode (de)multiplexers with parameters optimized using shortcuts to adiabaticity","2017",5,[6], "", 900))
 dummyData.append(PaperData("Guery-Odelin","Shortcuts to adiabaticity: Concepts, methods, and applications","2019",6,[], "", 1000))
 makeGraph(dummyData, "combined")
+
+d = draw.Drawing(1000, 1000)
+
+colorFn = plt.get_cmap("Wistia")
+g = draw.LinearGradient(0, 50, 50, 55)
+
+min = matplotlib.colors.rgb2hex(colorFn(0))
+print(min)
+max = matplotlib.colors.rgb2hex(colorFn(1))
+print(max)
+g.addStop(0, min, 1)
+g.addStop(1, max, 1)
+d.append(draw.Rectangle(0, 50, 50, 5, stroke='black', stroke_width=0.002, fill=g))
+
+# rgb = colorFn((paper.numWords-minWords)/(maxWords-minWords))[:3]
+# hex = matplotlib.colors.rgb2hex(rgb)
+
+# calculation would be something like
+d.saveSvg('key.svg')
