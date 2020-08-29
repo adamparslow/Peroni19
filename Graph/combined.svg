@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='ASCII' standalone='yes'?>
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="3279pt" viewBox="0 0 3279pt 788pt" height="788pt">
   <g>
-    <g><g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 604)">
+    <g transform="translate(0, 100) scale(1) "><g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 604)">
 <polygon fill="white" stroke="transparent" points="-4,4 -4,-604 3274.5,-604 3274.5,4 -4,4"/>
 <!-- 1 -->
 <g id="node1" class="node">
@@ -192,7 +192,7 @@
 </g>
 </g>
 </g>
-    <g transform="translate(0, 688) scale(1) "><defs>
+    <g transform="translate(0, 788) scale(1) "><defs>
 </defs>
 <rect x="0" y="-80" width="3279" height="80" fill="white"/>
 <rect x="200" y="-45.0" width="2879" height="5" fill="black"/>
@@ -219,7 +219,7 @@
 <rect x="3074.0" y="-40.0" width="5" height="15" fill="black"/>
 <text x="3039.0" y="-1.0" font-size="29">2019</text>
 </g>
-    <g transform="translate(0, 788) scale(1) "><defs>
+    <g transform="translate(2829, 100) scale(1) "><defs>
 <linearGradient x1="70" y1="-50" x2="370" y2="-80" gradientUnits="userSpaceOnUse" id="d0">
 <stop offset="0" stop-color="#e4ff7a" stop-opacity="1"/>
 <stop offset="1" stop-color="#fc7f00" stop-opacity="1"/>

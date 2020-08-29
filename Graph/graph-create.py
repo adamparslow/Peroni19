@@ -134,17 +134,15 @@ def makeGraph(papers, output):
 	fig = sg.SVGFigure("3279pt", "788pt")
 
 	fig1 = sg.fromfile('key.svg')
-	print(fig1)
 	fig2 = sg.fromfile('map.svg')
-	print(fig2)
 	fig3 = sg.fromfile('timeline.svg')
 
 	plot1 = fig1.getroot()
-	plot1.moveto(0, 788)
+	plot1.moveto(2829, 100)
 	plot2 = fig2.getroot()
-	# plot2.moveto(0, 100)
+	plot2.moveto(0, 100)
 	plot3 = fig3.getroot()
-	plot3.moveto(0, 688)
+	plot3.moveto(0, 788)
 
 	fig.append([plot2, plot3, plot1])
 
