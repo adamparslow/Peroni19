@@ -1,15 +1,21 @@
 # random functions for flowchart
 
+def getYears(paper):
+	return paper.year
 
-def getTimescale(stuff):
+def getTimescale(papers, widthPerYear=3, edgeWidth=0.5):
+	years = map(getYears, papers)
+	
+	print(years)
 	timeBounds = [min(years),max(years)]
 
-	widthPerYear = 300
-	imageWidth = widthPerYear*(timeBounds[2]-timeBounds[1])
-	edgeWidth = 50
+	imageWidth = widthPerYear*(timeBounds[1]-timeBounds[0])
 	# want a function that maps year to pixel location
-	timescale = widthPerYear*(year - timeBounds[1]) + edgeWidth
-	return
+	xCoords = []
+	for paper in papers:
+		timescale = widthPerYear*(year - timeBounds[0]) + edgeWidth
+		xCoords.append(timescale)
+	return xCoords
 
 def setAreaFactors(scalingConstant):
 	# for size scaling, desire that numpages/box area is constant over the svg
@@ -24,13 +30,11 @@ def setAreaFactors(scalingConstant):
 	return
 
 
-def writeBoxContents(stuff):
-	stringToWrite = author + "(" + year + ")\n" "\"" + title "\"" 
+def writeBoxContents(paper):
+	stringToWrite = paper.author + "(" + paper.year + ")\n" "\"" + paper.title "\"" 
 	# make it a link somehow...
 
-	# write to .dot file
-
-	return
+	return stringToWrite
 
 
 def addTimescale():
