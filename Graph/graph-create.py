@@ -4,6 +4,8 @@ import matplotlib.pyplot as plt
 import matplotlib 
 import drawSvg as draw
 from drawSvg.widgets import DrawingWidget
+import svgutils.transform as sg
+import sys 
 
 A = pgv.AGraph(directed=True, overlap=True, splines="ortho")
 
@@ -55,7 +57,7 @@ def writeBoxContents(paper):
 def getNumWords(paper):
 	return paper.numWords
 
-def drawTimeline(minYear, maxYear, width=2000, margin=27):
+def drawTimeline(minYear, maxYear, width=3279, margin=200):
 	boxStart = margin
 	boxEnd = width - margin
 	numTicks = maxYear - minYear + 1
@@ -118,3 +120,16 @@ minYear = min(years)
 maxYear = max(years)
 
 drawTimeline(minYear, maxYear)
+
+fig = sg.SVGFigure("3279pt", "688pt")
+
+fig1 = sg.fromfile('map.svg')
+fig2 = sg.fromfile('timeline.svg')
+
+plot1 = fig1.getroot()
+plot2 = fig2.getroot()
+plot2.moveto(0, 688)
+
+fig.append([plot1, plot2])
+
+fig.save("combined.svg")
