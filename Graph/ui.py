@@ -19,15 +19,15 @@ outgoing_links = {}
 
 currId = 0
 
-def findCitations(file_names):
+def findCitations(papers):
 
-    global report_names
     global outgoing_links
 
-
-    for file_name in file_names:
-        pdf = PdfFileReader(file_name)
+    for paper in papers:
+        pdf = PdfFileReader(paper.fileName)
         pdf_length = pdf.getNumPages()
+        paper.numPages = pdf_length
+
 
         #Read through each page in the file and extract the text from it
         for page_number in range(pdf_length):
@@ -36,11 +36,12 @@ def findCitations(file_names):
             raw = raw.replace('\n', '')
         
             #Check if the page that we are currently on contains the name of any of the other reports that we are looking for links too
-            for report in report_names:
-                if report in raw:
+            for paper2 in papers:
+                if ("".join(paper2.title.split())) in raw:
                     if len(outgoing_links[report]) == 0:
                         outgoing_links[report] = []
                     outgoing_links[file_name].append(report)
+                print(outgoing_links[file_name])
 
     return outgoing_links
 
@@ -80,7 +81,7 @@ def pdfSelectedViewer(numRows):
     pdfSelected.append([sg.Listbox(values=[], enable_events=True, size=(40, 20), key="selectedList")])
     pdfSelected.append([sg.Text("Enter Desired Output File: ")])
     pdfSelected.append([sg.InputText(do_not_clear = True, key = "output")])
-    pdfSelected.append([sg.Button('Generate Map')])
+    pdfSelected.append([sg.Button('execute')])
     return pdfSelected
 
 
@@ -112,6 +113,7 @@ def pdfSelectedListboxManager():
     global currId
     global window
     global papers
+    global report_names
 
 
     try:
@@ -134,9 +136,11 @@ def pdfSelectedListboxManager():
         temp["authors"] = authors
         year = text1
 
-        newPaper = PaperData(authors, title, year, currId, [], "", 0)
+        newPaper = PaperData(authors, title, year, fileName, currId, [], "", 0)
         currId += 1
         papers.append(newPaper)
+
+        report_names.append("".join(title.split()))
 
         selectedFileList.append(temp)
 
@@ -208,10 +212,10 @@ while True:
 
     elif event == 'execute':
         print(folder)
-        tempFileName = []
+        '''tempFileName = []
         for selected in selectedFileList:
-            tempFileName.append(folder+"/"+str(selected["fileName"]))
-        links = findCitations(tempFileName)
+            tempFileName.append(folder+"/"+str(selected["fileName"]))'''
+        links = findCitations(papers)
 
         print('execute')
         
