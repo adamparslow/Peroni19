@@ -24,9 +24,9 @@ currId = 0
 
 selectedFileList = []
 
-newPaper24 = PaperData("M V Berry", "Transitionless quantum driving", "2009", "/home/aztar/Dropbox/SyncHacc/Peroni19/Papers/Berry2009.pdf", 24, [], "", 0)
-papers.append(newPaper24)
-selectedFileList.append({"title": "Transitionless quantum driving", "authors": "M V Berry", "fileName": "Berry2009.pdf"})
+# newPaper24 = PaperData("M V Berry", "Transitionless quantum driving", "2009", "/home/aztar/Dropbox/SyncHacc/Peroni19/Papers/Berry2009.pdf", 24, [], "", 0)
+# papers.append(newPaper24)
+# selectedFileList.append({"title": "Transitionless quantum driving", "authors": "M V Berry", "fileName": "Berry2009.pdf"})
 
 
 newPaper25 = PaperData("E. Torrontegui", "Shortcuts to adiabaticity", "2015", "/home/aztar/Dropbox/SyncHacc/Peroni19/Papers/muga2015.pdf", 25, [], "", 0)
@@ -178,7 +178,7 @@ def pdfSelectedListboxManager():
         filePath = os.path.join(
             values["-FOLDER-"], values["-FILE LIST-"][0]
         )  
-        fileName = os.path.basename(filePath)     
+        fileName = filePath
     except:
         pass
     if(fileName in selectedFileList):
@@ -186,6 +186,8 @@ def pdfSelectedListboxManager():
     elif(fileName not in selectedFileList):
         temp = {}
         temp["fileName"] = fileName
+        print ("------------------- FILE NAME ---------------")
+        print (fileName)
         text = sg.popup_get_text('Please enter title and authors:',"" ,'Title:  Author(s)(comma seperated):')
         text1 = sg.popup_get_text('Please enter year of publication:',"" ,'')
         title = text.split(" Author(s)(comma seperated):")[0].strip('Title: ')

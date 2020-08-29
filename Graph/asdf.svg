@@ -1,0 +1,203 @@
+<?xml version='1.0' encoding='ASCII' standalone='yes'?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="3279pt" viewBox="0 0 3279pt 1000pt" height="1000pt">
+  <g>
+    <g transform="translate(0, 100) scale(1) "><g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 796)">
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-796 3268,-796 3268,4 -4,4"/>
+<!-- 0 -->
+<g id="node1" class="node">
+<title>0</title>
+<g id="a_node1"><a xlink:href="/home/aztar/Dropbox/SyncHacc/Peroni19/Papers/Berry2009.pdf" xlink:title=" M V Berry (2009)&#10;&quot;ransitionless quantum&#10;driving&quot;">
+<polygon fill="#edf75a" stroke="black" points="358,-172 0,-172 0,-28 358,-28 358,-172"/>
+<text text-anchor="middle" x="179" y="-124.8" font-family="Times,serif" font-size="29.00"> M V Berry (2009)</text>
+<text text-anchor="middle" x="179" y="-92.8" font-family="Times,serif" font-size="29.00">"ransitionless quantum</text>
+<text text-anchor="middle" x="179" y="-60.8" font-family="Times,serif" font-size="29.00">driving"</text>
+</a>
+</g>
+</g>
+<!-- 26 -->
+<g id="node2" class="node">
+<title>26</title>
+<g id="a_node2"><a xlink:href="/home/aztar/Dropbox/SyncHacc/Peroni19/Papers/oe-21-18-21224.pdf" xlink:title="Shuo-Yen Tseng (2013)&#10;&quot;Counterdiabatic&#10;mode-evolution&#10;based coupled-waveguide&#10;devices&quot;">
+<polygon fill="#f2f34a" stroke="black" points="1529.5,-472 1132.5,-472 1132.5,-304 1529.5,-304 1529.5,-472"/>
+<text text-anchor="middle" x="1331" y="-444.8" font-family="Times,serif" font-size="29.00">Shuo-Yen Tseng (2013)</text>
+<text text-anchor="middle" x="1331" y="-412.8" font-family="Times,serif" font-size="29.00">"Counterdiabatic</text>
+<text text-anchor="middle" x="1331" y="-380.8" font-family="Times,serif" font-size="29.00">mode-evolution</text>
+<text text-anchor="middle" x="1331" y="-348.8" font-family="Times,serif" font-size="29.00">based coupled-waveguide</text>
+<text text-anchor="middle" x="1331" y="-316.8" font-family="Times,serif" font-size="29.00">devices"</text>
+</a>
+</g>
+</g>
+<!-- 0&#45;&gt;26 -->
+<g id="edge1" class="edge">
+<title>0-&gt;26</title>
+<path fill="none" stroke="black" d="M358.02,-123C671.66,-123 1287.5,-123 1287.5,-123 1287.5,-123 1287.5,-273.79 1287.5,-273.79"/>
+<polygon fill="black" stroke="black" points="1277,-273.79 1287.5,-303.79 1298,-273.79 1277,-273.79"/>
+</g>
+<!-- 27 -->
+<g id="node3" class="node">
+<title>27</title>
+<g id="a_node3"><a xlink:href="/home/aztar/Dropbox/SyncHacc/Peroni19/Papers/oe-22-16-18849.pdf" xlink:title="Shuo-Yen Tseng (2014)&#10;&quot;Short and robust&#10;directional couplers&#10;designed by shortcuts&#10;to adiabaticity&quot;">
+<polygon fill="#eff653" stroke="black" points="1795.5,-184 1442.5,-184 1442.5,-16 1795.5,-16 1795.5,-184"/>
+<text text-anchor="middle" x="1619" y="-156.8" font-family="Times,serif" font-size="29.00">Shuo-Yen Tseng (2014)</text>
+<text text-anchor="middle" x="1619" y="-124.8" font-family="Times,serif" font-size="29.00">"Short and robust</text>
+<text text-anchor="middle" x="1619" y="-92.8" font-family="Times,serif" font-size="29.00">directional couplers</text>
+<text text-anchor="middle" x="1619" y="-60.8" font-family="Times,serif" font-size="29.00">designed by shortcuts</text>
+<text text-anchor="middle" x="1619" y="-28.8" font-family="Times,serif" font-size="29.00">to adiabaticity"</text>
+</a>
+</g>
+</g>
+<!-- 0&#45;&gt;27 -->
+<g id="edge2" class="edge">
+<title>0-&gt;27</title>
+<path fill="none" stroke="black" d="M358.1,-75C358.1,-75 1412.3,-75 1412.3,-75"/>
+<polygon fill="black" stroke="black" points="1412.3,-85.5 1442.3,-75 1412.3,-64.5 1412.3,-85.5"/>
+</g>
+<!-- 25 -->
+<g id="node4" class="node">
+<title>25</title>
+<g id="a_node4"><a xlink:href="/home/aztar/Dropbox/SyncHacc/Peroni19/Papers/muga2015.pdf" xlink:title="E. Torrontegui (2015)&#10;&quot;Shortcuts to adiabaticity&quot;">
+<polygon fill="#fc7f00" stroke="black" points="2110.5,-460 1703.5,-460 1703.5,-316 2110.5,-316 2110.5,-460"/>
+<text text-anchor="middle" x="1907" y="-396.8" font-family="Times,serif" font-size="29.00">E. Torrontegui (2015)</text>
+<text text-anchor="middle" x="1907" y="-364.8" font-family="Times,serif" font-size="29.00">"Shortcuts to adiabaticity"</text>
+</a>
+</g>
+</g>
+<!-- 0&#45;&gt;25 -->
+<g id="edge3" class="edge">
+<title>0-&gt;25</title>
+<path fill="none" stroke="black" d="M119.33,-172.2C119.33,-184.82 119.33,-194 119.33,-194 119.33,-194 1734.2,-194 1734.2,-194 1734.2,-194 1734.2,-285.76 1734.2,-285.76"/>
+<polygon fill="black" stroke="black" points="1723.7,-285.76 1734.2,-315.76 1744.7,-285.76 1723.7,-285.76"/>
+</g>
+<!-- 29 -->
+<g id="node5" class="node">
+<title>29</title>
+<g id="a_node5"><a xlink:href="/home/aztar/Dropbox/SyncHacc/Peroni19/PapersWithTwoCol/oe-27-5-7384.pdf" xlink:title="H. Zhang (2019)&#10;&quot;Fast and robust&#10;quantum control&#10;for multimode interactions&#10;using shortcuts&#10;to adiabaticity&quot;">
+<polygon fill="#ebf962" stroke="black" points="3264,-200 2854,-200 2854,0 3264,0 3264,-200"/>
+<text text-anchor="middle" x="3059" y="-172.8" font-family="Times,serif" font-size="29.00">H. Zhang (2019)</text>
+<text text-anchor="middle" x="3059" y="-140.8" font-family="Times,serif" font-size="29.00">"Fast and robust</text>
+<text text-anchor="middle" x="3059" y="-108.8" font-family="Times,serif" font-size="29.00">quantum control</text>
+<text text-anchor="middle" x="3059" y="-76.8" font-family="Times,serif" font-size="29.00">for multimode interactions</text>
+<text text-anchor="middle" x="3059" y="-44.8" font-family="Times,serif" font-size="29.00">using shortcuts</text>
+<text text-anchor="middle" x="3059" y="-12.8" font-family="Times,serif" font-size="29.00">to adiabaticity"</text>
+</a>
+</g>
+</g>
+<!-- 0&#45;&gt;29 -->
+<g id="edge4" class="edge">
+<title>0-&gt;29</title>
+<path fill="none" stroke="black" d="M238.67,-172.26C238.67,-182.15 238.67,-189 238.67,-189 238.67,-189 2823.9,-189 2823.9,-189"/>
+<polygon fill="black" stroke="black" points="2823.9,-199.5 2853.9,-189 2823.9,-178.5 2823.9,-199.5"/>
+</g>
+<!-- 26&#45;&gt;27 -->
+<g id="edge5" class="edge">
+<title>26-&gt;27</title>
+<path fill="none" stroke="black" d="M1486,-303.92C1486,-303.92 1486,-214.18 1486,-214.18"/>
+<polygon fill="black" stroke="black" points="1496.5,-214.18 1486,-184.18 1475.5,-214.18 1496.5,-214.18"/>
+</g>
+<!-- 28 -->
+<g id="node6" class="node">
+<title>28</title>
+<g id="a_node6"><a xlink:href="/home/aztar/Dropbox/SyncHacc/Peroni19/Papers/oe-23-8-10405.pdf" xlink:title="Tzu-Hsuan Pan (2015)&#10;&quot;Short and robust&#10;silicon mode (de)multiplexers&#10;using shortcuts&#10;to adiabaticity&quot;">
+<polygon fill="#e8fb6b" stroke="black" points="2133,-760 1681,-760 1681,-592 2133,-592 2133,-760"/>
+<text text-anchor="middle" x="1907" y="-732.8" font-family="Times,serif" font-size="29.00">Tzu-Hsuan Pan (2015)</text>
+<text text-anchor="middle" x="1907" y="-700.8" font-family="Times,serif" font-size="29.00">"Short and robust</text>
+<text text-anchor="middle" x="1907" y="-668.8" font-family="Times,serif" font-size="29.00">silicon mode (de)multiplexers</text>
+<text text-anchor="middle" x="1907" y="-636.8" font-family="Times,serif" font-size="29.00">using shortcuts</text>
+<text text-anchor="middle" x="1907" y="-604.8" font-family="Times,serif" font-size="29.00">to adiabaticity"</text>
+</a>
+</g>
+</g>
+<!-- 26&#45;&gt;28 -->
+<g id="edge6" class="edge">
+<title>26-&gt;28</title>
+<path fill="none" stroke="black" d="M1529.6,-466C1611.9,-466 1688.5,-466 1688.5,-466 1688.5,-466 1688.5,-561.79 1688.5,-561.79"/>
+<polygon fill="black" stroke="black" points="1678,-561.79 1688.5,-591.79 1699,-561.79 1678,-561.79"/>
+</g>
+<!-- 27&#45;&gt;28 -->
+<g id="edge7" class="edge">
+<title>27-&gt;28</title>
+<path fill="none" stroke="black" d="M1696,-184.06C1696,-184.06 1696,-561.77 1696,-561.77"/>
+<polygon fill="black" stroke="black" points="1685.5,-561.77 1696,-591.77 1706.5,-561.77 1685.5,-561.77"/>
+</g>
+<!-- 25&#45;&gt;27 -->
+<g id="edge8" class="edge">
+<title>25-&gt;27</title>
+<path fill="none" stroke="black" d="M1764.8,-315.7C1764.8,-315.7 1764.8,-214.09 1764.8,-214.09"/>
+<polygon fill="black" stroke="black" points="1775.3,-214.09 1764.8,-184.09 1754.3,-214.09 1775.3,-214.09"/>
+</g>
+<!-- 25&#45;&gt;28 -->
+<g id="edge9" class="edge">
+<title>25-&gt;28</title>
+<path fill="none" stroke="black" d="M1907,-460.3C1907,-460.3 1907,-561.91 1907,-561.91"/>
+<polygon fill="black" stroke="black" points="1896.5,-561.91 1907,-591.91 1917.5,-561.91 1896.5,-561.91"/>
+</g>
+<!-- 30 -->
+<g id="node7" class="node">
+<title>30</title>
+<g id="a_node7"><a xlink:href="/home/aztar/Dropbox/SyncHacc/Peroni19/PapersWithTwoCol/PhysRevA.88.033406.pdf" xlink:title="Xiao-Jing Lu (2013)&#10;&quot;Fast and robust&#10;population transfer&#10;in two-level quantum&#10;systems with dephasing&#10;noise and/or systematic&#10;frequency errors&quot;">
+<polygon fill="#e4ff7a" stroke="black" points="1516,-792 1146,-792 1146,-560 1516,-560 1516,-792"/>
+<text text-anchor="middle" x="1331" y="-764.8" font-family="Times,serif" font-size="29.00">Xiao-Jing Lu (2013)</text>
+<text text-anchor="middle" x="1331" y="-732.8" font-family="Times,serif" font-size="29.00">"Fast and robust</text>
+<text text-anchor="middle" x="1331" y="-700.8" font-family="Times,serif" font-size="29.00">population transfer</text>
+<text text-anchor="middle" x="1331" y="-668.8" font-family="Times,serif" font-size="29.00">in two-level quantum</text>
+<text text-anchor="middle" x="1331" y="-636.8" font-family="Times,serif" font-size="29.00">systems with dephasing</text>
+<text text-anchor="middle" x="1331" y="-604.8" font-family="Times,serif" font-size="29.00">noise and/or systematic</text>
+<text text-anchor="middle" x="1331" y="-572.8" font-family="Times,serif" font-size="29.00">frequency errors"</text>
+</a>
+</g>
+</g>
+<!-- 30&#45;&gt;27 -->
+<g id="edge10" class="edge">
+<title>30-&gt;27</title>
+<path fill="none" stroke="black" d="M1516.2,-576C1565.5,-576 1605.2,-576 1605.2,-576 1605.2,-576 1605.2,-214 1605.2,-214"/>
+<polygon fill="black" stroke="black" points="1615.7,-214 1605.2,-184 1594.7,-214 1615.7,-214"/>
+</g>
+<!-- 30&#45;&gt;28 -->
+<g id="edge11" class="edge">
+<title>30-&gt;28</title>
+<path fill="none" stroke="black" d="M1516,-676C1516,-676 1650.8,-676 1650.8,-676"/>
+<polygon fill="black" stroke="black" points="1650.8,-686.5 1680.8,-676 1650.8,-665.5 1650.8,-686.5"/>
+</g>
+</g>
+</g>
+    <g transform="translate(0, 1000) scale(1) "><defs>
+</defs>
+<rect x="0" y="-80" width="3279" height="80" fill="white"/>
+<rect x="200" y="-45.0" width="2879" height="5" fill="black"/>
+<rect x="200.0" y="-40.0" width="5" height="15" fill="black"/>
+<text x="165.0" y="-1.0" font-size="29">2009</text>
+<rect x="487.4" y="-40.0" width="5" height="15" fill="black"/>
+<text x="452.4" y="-1.0" font-size="29">2010</text>
+<rect x="774.8" y="-40.0" width="5" height="15" fill="black"/>
+<text x="739.8" y="-1.0" font-size="29">2011</text>
+<rect x="1062.1999999999998" y="-40.0" width="5" height="15" fill="black"/>
+<text x="1027.1999999999998" y="-1.0" font-size="29">2012</text>
+<rect x="1349.6" y="-40.0" width="5" height="15" fill="black"/>
+<text x="1314.6" y="-1.0" font-size="29">2013</text>
+<rect x="1637.0" y="-40.0" width="5" height="15" fill="black"/>
+<text x="1602.0" y="-1.0" font-size="29">2014</text>
+<rect x="1924.3999999999999" y="-40.0" width="5" height="15" fill="black"/>
+<text x="1889.3999999999999" y="-1.0" font-size="29">2015</text>
+<rect x="2211.7999999999997" y="-40.0" width="5" height="15" fill="black"/>
+<text x="2176.7999999999997" y="-1.0" font-size="29">2016</text>
+<rect x="2499.2" y="-40.0" width="5" height="15" fill="black"/>
+<text x="2464.2" y="-1.0" font-size="29">2017</text>
+<rect x="2786.6" y="-40.0" width="5" height="15" fill="black"/>
+<text x="2751.6" y="-1.0" font-size="29">2018</text>
+<rect x="3074.0" y="-40.0" width="5" height="15" fill="black"/>
+<text x="3039.0" y="-1.0" font-size="29">2019</text>
+</g>
+    <g transform="translate(2829, 100) scale(1) "><defs>
+<linearGradient x1="70" y1="-50" x2="370" y2="-80" gradientUnits="userSpaceOnUse" id="d0">
+<stop offset="0" stop-color="#e4ff7a" stop-opacity="1"/>
+<stop offset="1" stop-color="#fc7f00" stop-opacity="1"/>
+</linearGradient>
+</defs>
+<text x="0" y="-55" font-size="29">Key</text>
+<text x="50" y="-20" font-size="29">6</text>
+<text x="178" y="-20" font-size="29">Pages</text>
+<text x="350" y="-20" font-size="29">54</text>
+<rect x="70" y="-80" width="300" height="30" stroke="black" stroke-width="1" fill="url(#d0)"/>
+</g>
+  </g>
+</svg>
