@@ -7,7 +7,7 @@
 <g id="node1" class="node">
 <title>0</title>
 <g id="a_node1"><a xlink:href="/home/aztar/Dropbox/SyncHacc/Peroni19/Papers/Berry2009.pdf" xlink:title=" M V Berry (2009)&#10;&quot;ransitionless quantum&#10;driving&quot;">
-<polygon fill="#edf75a" stroke="black" points="358,-172 0,-172 0,-28 358,-28 358,-172"/>
+<polygon fill="#ffaa00" stroke="black" points="358,-172 0,-172 0,-28 358,-28 358,-172"/>
 <text text-anchor="middle" x="179" y="-124.8" font-family="Times,serif" font-size="29.00"> M V Berry (2009)</text>
 <text text-anchor="middle" x="179" y="-92.8" font-family="Times,serif" font-size="29.00">"ransitionless quantum</text>
 <text text-anchor="middle" x="179" y="-60.8" font-family="Times,serif" font-size="29.00">driving"</text>
@@ -18,7 +18,7 @@
 <g id="node2" class="node">
 <title>26</title>
 <g id="a_node2"><a xlink:href="/home/aztar/Dropbox/SyncHacc/Peroni19/Papers/oe-21-18-21224.pdf" xlink:title="Shuo-Yen Tseng (2013)&#10;&quot;Counterdiabatic&#10;mode-evolution&#10;based coupled-waveguide&#10;devices&quot;">
-<polygon fill="#f2f34a" stroke="black" points="1529.5,-472 1132.5,-472 1132.5,-304 1529.5,-304 1529.5,-472"/>
+<polygon fill="#fc7f00" stroke="black" points="1529.5,-472 1132.5,-472 1132.5,-304 1529.5,-304 1529.5,-472"/>
 <text text-anchor="middle" x="1331" y="-444.8" font-family="Times,serif" font-size="29.00">Shuo-Yen Tseng (2013)</text>
 <text text-anchor="middle" x="1331" y="-412.8" font-family="Times,serif" font-size="29.00">"Counterdiabatic</text>
 <text text-anchor="middle" x="1331" y="-380.8" font-family="Times,serif" font-size="29.00">mode-evolution</text>
@@ -37,7 +37,7 @@
 <g id="node3" class="node">
 <title>27</title>
 <g id="a_node3"><a xlink:href="/home/aztar/Dropbox/SyncHacc/Peroni19/Papers/oe-22-16-18849.pdf" xlink:title="Shuo-Yen Tseng (2014)&#10;&quot;Short and robust&#10;directional couplers&#10;designed by shortcuts&#10;to adiabaticity&quot;">
-<polygon fill="#eff653" stroke="black" points="1795.5,-184 1442.5,-184 1442.5,-16 1795.5,-16 1795.5,-184"/>
+<polygon fill="#fe9500" stroke="black" points="1795.5,-184 1442.5,-184 1442.5,-16 1795.5,-16 1795.5,-184"/>
 <text text-anchor="middle" x="1619" y="-156.8" font-family="Times,serif" font-size="29.00">Shuo-Yen Tseng (2014)</text>
 <text text-anchor="middle" x="1619" y="-124.8" font-family="Times,serif" font-size="29.00">"Short and robust</text>
 <text text-anchor="middle" x="1619" y="-92.8" font-family="Times,serif" font-size="29.00">directional couplers</text>
@@ -55,24 +55,29 @@
 <!-- 25 -->
 <g id="node4" class="node">
 <title>25</title>
-<g id="a_node4"><a xlink:href="/home/aztar/Dropbox/SyncHacc/Peroni19/Papers/muga2015.pdf" xlink:title="E. Torrontegui (2015)&#10;&quot;Shortcuts to adiabaticity&quot;">
-<polygon fill="#fc7f00" stroke="black" points="2110.5,-460 1703.5,-460 1703.5,-316 2110.5,-316 2110.5,-460"/>
-<text text-anchor="middle" x="1907" y="-396.8" font-family="Times,serif" font-size="29.00">E. Torrontegui (2015)</text>
-<text text-anchor="middle" x="1907" y="-364.8" font-family="Times,serif" font-size="29.00">"Shortcuts to adiabaticity"</text>
+<g id="a_node4"><a xlink:href="/home/aztar/Dropbox/SyncHacc/Peroni19/PapersWithTwoCol/PhysRevA.91.012325.pdf" xlink:title="Y. Chen (2015)&#10;&quot;Fast and noise-resistant&#10;implementation&#10;of quantum phase&#10;gates and creation&#10;of quantum entangled&#10;states&quot;">
+<polygon fill="#ffaa00" stroke="black" points="2098,-504 1716,-504 1716,-272 2098,-272 2098,-504"/>
+<text text-anchor="middle" x="1907" y="-476.8" font-family="Times,serif" font-size="29.00">Y. Chen (2015)</text>
+<text text-anchor="middle" x="1907" y="-444.8" font-family="Times,serif" font-size="29.00">"Fast and noise-resistant</text>
+<text text-anchor="middle" x="1907" y="-412.8" font-family="Times,serif" font-size="29.00">implementation</text>
+<text text-anchor="middle" x="1907" y="-380.8" font-family="Times,serif" font-size="29.00">of quantum phase</text>
+<text text-anchor="middle" x="1907" y="-348.8" font-family="Times,serif" font-size="29.00">gates and creation</text>
+<text text-anchor="middle" x="1907" y="-316.8" font-family="Times,serif" font-size="29.00">of quantum entangled</text>
+<text text-anchor="middle" x="1907" y="-284.8" font-family="Times,serif" font-size="29.00">states"</text>
 </a>
 </g>
 </g>
 <!-- 0&#45;&gt;25 -->
 <g id="edge3" class="edge">
 <title>0-&gt;25</title>
-<path fill="none" stroke="black" d="M119.33,-172.2C119.33,-184.82 119.33,-194 119.33,-194 119.33,-194 1734.2,-194 1734.2,-194 1734.2,-194 1734.2,-285.76 1734.2,-285.76"/>
-<polygon fill="black" stroke="black" points="1723.7,-285.76 1734.2,-315.76 1744.7,-285.76 1723.7,-285.76"/>
+<path fill="none" stroke="black" d="M119.33,-172.15C119.33,-225.17 119.33,-288 119.33,-288 119.33,-288 1685.7,-288 1685.7,-288"/>
+<polygon fill="black" stroke="black" points="1685.7,-298.5 1715.7,-288 1685.7,-277.5 1685.7,-298.5"/>
 </g>
 <!-- 29 -->
 <g id="node5" class="node">
 <title>29</title>
 <g id="a_node5"><a xlink:href="/home/aztar/Dropbox/SyncHacc/Peroni19/PapersWithTwoCol/oe-27-5-7384.pdf" xlink:title="H. Zhang (2019)&#10;&quot;Fast and robust&#10;quantum control&#10;for multimode interactions&#10;using shortcuts&#10;to adiabaticity&quot;">
-<polygon fill="#ebf962" stroke="black" points="3264,-200 2854,-200 2854,0 3264,0 3264,-200"/>
+<polygon fill="#ffbd00" stroke="black" points="3264,-200 2854,-200 2854,0 3264,0 3264,-200"/>
 <text text-anchor="middle" x="3059" y="-172.8" font-family="Times,serif" font-size="29.00">H. Zhang (2019)</text>
 <text text-anchor="middle" x="3059" y="-140.8" font-family="Times,serif" font-size="29.00">"Fast and robust</text>
 <text text-anchor="middle" x="3059" y="-108.8" font-family="Times,serif" font-size="29.00">quantum control</text>
@@ -85,8 +90,8 @@
 <!-- 0&#45;&gt;29 -->
 <g id="edge4" class="edge">
 <title>0-&gt;29</title>
-<path fill="none" stroke="black" d="M238.67,-172.26C238.67,-182.15 238.67,-189 238.67,-189 238.67,-189 2823.9,-189 2823.9,-189"/>
-<polygon fill="black" stroke="black" points="2823.9,-199.5 2853.9,-189 2823.9,-178.5 2823.9,-199.5"/>
+<path fill="none" stroke="black" d="M238.67,-172.14C238.67,-183.19 238.67,-191 238.67,-191 238.67,-191 2823.9,-191 2823.9,-191"/>
+<polygon fill="black" stroke="black" points="2823.9,-201.5 2853.9,-191 2823.9,-180.5 2823.9,-201.5"/>
 </g>
 <!-- 26&#45;&gt;27 -->
 <g id="edge5" class="edge">
@@ -98,7 +103,7 @@
 <g id="node6" class="node">
 <title>28</title>
 <g id="a_node6"><a xlink:href="/home/aztar/Dropbox/SyncHacc/Peroni19/Papers/oe-23-8-10405.pdf" xlink:title="Tzu-Hsuan Pan (2015)&#10;&quot;Short and robust&#10;silicon mode (de)multiplexers&#10;using shortcuts&#10;to adiabaticity&quot;">
-<polygon fill="#e8fb6b" stroke="black" points="2133,-760 1681,-760 1681,-592 2133,-592 2133,-760"/>
+<polygon fill="#ffda11" stroke="black" points="2133,-760 1681,-760 1681,-592 2133,-592 2133,-760"/>
 <text text-anchor="middle" x="1907" y="-732.8" font-family="Times,serif" font-size="29.00">Tzu-Hsuan Pan (2015)</text>
 <text text-anchor="middle" x="1907" y="-700.8" font-family="Times,serif" font-size="29.00">"Short and robust</text>
 <text text-anchor="middle" x="1907" y="-668.8" font-family="Times,serif" font-size="29.00">silicon mode (de)multiplexers</text>
@@ -110,26 +115,14 @@
 <!-- 26&#45;&gt;28 -->
 <g id="edge6" class="edge">
 <title>26-&gt;28</title>
-<path fill="none" stroke="black" d="M1529.6,-466C1611.9,-466 1688.5,-466 1688.5,-466 1688.5,-466 1688.5,-561.79 1688.5,-561.79"/>
-<polygon fill="black" stroke="black" points="1678,-561.79 1688.5,-591.79 1699,-561.79 1678,-561.79"/>
+<path fill="none" stroke="black" d="M1522.8,-472.06C1522.8,-548.02 1522.8,-648 1522.8,-648 1522.8,-648 1651,-648 1651,-648"/>
+<polygon fill="black" stroke="black" points="1651,-658.5 1681,-648 1651,-637.5 1651,-658.5"/>
 </g>
 <!-- 27&#45;&gt;28 -->
 <g id="edge7" class="edge">
 <title>27-&gt;28</title>
-<path fill="none" stroke="black" d="M1696,-184.06C1696,-184.06 1696,-561.77 1696,-561.77"/>
-<polygon fill="black" stroke="black" points="1685.5,-561.77 1696,-591.77 1706.5,-561.77 1685.5,-561.77"/>
-</g>
-<!-- 25&#45;&gt;27 -->
-<g id="edge8" class="edge">
-<title>25-&gt;27</title>
-<path fill="none" stroke="black" d="M1764.8,-315.7C1764.8,-315.7 1764.8,-214.09 1764.8,-214.09"/>
-<polygon fill="black" stroke="black" points="1775.3,-214.09 1764.8,-184.09 1754.3,-214.09 1775.3,-214.09"/>
-</g>
-<!-- 25&#45;&gt;28 -->
-<g id="edge9" class="edge">
-<title>25-&gt;28</title>
-<path fill="none" stroke="black" d="M1907,-460.3C1907,-460.3 1907,-561.91 1907,-561.91"/>
-<polygon fill="black" stroke="black" points="1896.5,-561.91 1907,-591.91 1917.5,-561.91 1896.5,-561.91"/>
+<path fill="none" stroke="black" d="M1698.5,-184.06C1698.5,-184.06 1698.5,-561.77 1698.5,-561.77"/>
+<polygon fill="black" stroke="black" points="1688,-561.77 1698.5,-591.77 1709,-561.77 1688,-561.77"/>
 </g>
 <!-- 30 -->
 <g id="node7" class="node">
@@ -147,16 +140,16 @@
 </g>
 </g>
 <!-- 30&#45;&gt;27 -->
-<g id="edge10" class="edge">
+<g id="edge8" class="edge">
 <title>30-&gt;27</title>
 <path fill="none" stroke="black" d="M1516.2,-576C1565.5,-576 1605.2,-576 1605.2,-576 1605.2,-576 1605.2,-214 1605.2,-214"/>
 <polygon fill="black" stroke="black" points="1615.7,-214 1605.2,-184 1594.7,-214 1615.7,-214"/>
 </g>
 <!-- 30&#45;&gt;28 -->
-<g id="edge11" class="edge">
+<g id="edge9" class="edge">
 <title>30-&gt;28</title>
-<path fill="none" stroke="black" d="M1516,-676C1516,-676 1650.8,-676 1650.8,-676"/>
-<polygon fill="black" stroke="black" points="1650.8,-686.5 1680.8,-676 1650.8,-665.5 1650.8,-686.5"/>
+<path fill="none" stroke="black" d="M1516,-704C1516,-704 1650.8,-704 1650.8,-704"/>
+<polygon fill="black" stroke="black" points="1650.8,-714.5 1680.8,-704 1650.8,-693.5 1650.8,-714.5"/>
 </g>
 </g>
 </g>
@@ -196,7 +189,7 @@
 <text x="0" y="-55" font-size="29">Key</text>
 <text x="50" y="-20" font-size="29">6</text>
 <text x="178" y="-20" font-size="29">Pages</text>
-<text x="350" y="-20" font-size="29">54</text>
+<text x="350" y="-20" font-size="29">12</text>
 <rect x="70" y="-80" width="300" height="30" stroke="black" stroke-width="1" fill="url(#d0)"/>
 </g>
   </g>

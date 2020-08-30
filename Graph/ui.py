@@ -29,7 +29,10 @@ selectedFileList = []
 # selectedFileList.append({"title": "Transitionless quantum driving", "authors": "M V Berry", "fileName": "Berry2009.pdf"})
 
 
-newPaper25 = PaperData("E. Torrontegui", "Shortcuts to adiabaticity", "2015", "/home/aztar/Dropbox/SyncHacc/Peroni19/Papers/muga2015.pdf", 25, [], "", 0)
+# newPaper25 = PaperData("E. Torrontegui", "Shortcuts to adiabaticity", "2015", "/home/aztar/Dropbox/SyncHacc/Peroni19/Papers/muga2015.pdf", 25, [], "", 0)
+# papers.append(newPaper25)
+# selectedFileList.append({"title": "Shortcuts to adiabaticity", "authors": "E. Torrontegui", "fileName": "muga2015.pdf"})
+newPaper25 = PaperData("Y. Chen", "Fast and noise-resistant implementation of quantum phase gates and creation of quantum entangled states", "2015", "/home/aztar/Dropbox/SyncHacc/Peroni19/PapersWithTwoCol/PhysRevA.91.012325.pdf", 25, [], "", 0)
 papers.append(newPaper25)
 selectedFileList.append({"title": "Shortcuts to adiabaticity", "authors": "E. Torrontegui", "fileName": "muga2015.pdf"})
 
